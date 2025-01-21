@@ -84,3 +84,8 @@ Basically when we push our branch in remote repo and we want to
 mereg our branch to another branch in that case 
 we have to raise a PUlL REQUEST(PR) or Merge Request (MR)
 from source to destination. 
+
+
+======================
+.gitignore: the files or folder whioch we mention in this ignore file 
+that fill will not recognised by git system .
