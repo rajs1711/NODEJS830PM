@@ -1,0 +1,86 @@
+Git features: 
+   version controll system 
+   code sharing 
+   code tracking 
+   Rollaback Scenario 
+   Give featur to work on same file by different person
+   at a same time 
+   Branching facility.
+
+These are the portal which gives facility to manage git  
+GITHUB , GITLAB , BITBUCKET , AZUREGIT
+
+#git init:
+use this command to setup git in your local ,
+ when you create a new repository.
+
+#git config --g user.name "myname"
+#git config --g user.email "myemail@gmail.com"
+
+
+
+
+# git clone repolins
+example: git clone https://github.com/rajs1711/NODEJS830PM.git
+
+Explain: This command is use to clone the remote repository in your local system
+
+# git add .  or git add filename
+
+example: git add .  ( after addition , updation or deletion of any file in your repository you have to use this command to add your chnages in stagging area)
+
+[Note: if you want to add multiple files at once use 
+git add . other if you want to push filename one by one then you 
+can git add filename.]
+
+#git commit -m " your meesage"
+
+example: git commit -m " login code"
+
+Explain:  After adding your file to stage area you have to 
+        commit the chnages which you want to push in remote repo.
+
+#git push origin branchname:
+Example: git push origin feature/login
+
+Explain: we use this command to push our feature/login branch 
+         code to remote repository.
+
+#git pull origin branchname :
+
+example: git pull origin main
+
+Explain: this comamnd is use to pull the latest changes from branch name.
+         Above example:
+          here we are pulling latest chnages from main
+
+#git branch branchname :
+
+example:git branch feature/registration 
+
+Explain: This comamnd is use to create a new branch 
+         fore example we are creating a new branch feature/registration.
+
+#git checkout branchname:
+
+example:git checkout feature/registration 
+
+Explain: this command is use to switch to desired branch. for example
+         here we are switching to feature/registration 
+
+# git merge branchname:
+
+git merge feature/registration  
+
+Explain: This command is use to merge the given branch in your branch
+        for example if your are in develop branch and you want 
+        to merge the chnages if feature/registration so you have use the concept merge 
+
+=================================================
+
+PR : Pull Request  == MR:  Merge Request
+
+Basically when we push our branch in remote repo and we want to
+mereg our branch to another branch in that case 
+we have to raise a PUlL REQUEST(PR) or Merge Request (MR)
+from source to destination. 
