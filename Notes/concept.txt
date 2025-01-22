@@ -1,0 +1,42 @@
+#  Dependencies and DevDependencies :
+
+difference between both is -
+if  the package is required only during the development of
+your project not in production in that case we install
+packages under DevDependencies.
+for example:
+ nodemon package: this package helps to restart your server
+ whenever your save your file , so this is the requirment which
+ needs during development only , that;s why we have to install
+ this package under DevDependencies.
+
+  npm i nodemon --save-dev 
+
+======================
+
+Basic Exteions of Vscode :
+
+Gitlense 
+Elint => vs code > setting > settings > search format eslint 
+         > check enable Eslint as formatter > search format > check format on save and paste > select defualt formater eslint.
+material icon
+
+=================
+shorcut key : ctrl + j   termainal 
+=====================
+Multiple apcakge installation :
+
+npm install dotenv cors 
+Note : here dotenv and cors are two different package
+
+#.env => This file contains envrionment varaible of your project.
+        Basically it stores configuration settings of your application.
+        the file name will always be .env
+
+        To access .env varaible in another file you have to access using 
+
+        process.env.varibalname
+        example: process.env.PORT
+
+
+
