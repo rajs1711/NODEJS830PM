@@ -38,5 +38,18 @@ Note : here dotenv and cors are two different package
         process.env.varibalname
         example: process.env.PORT
 
+======================================================
+Date: 23-JAN-2025 
+
+MVC Architecture :
+  M=> Model  => Database Schema and opeartions (Businness logic) like query  and send response to controller 
+  V=>view  => When repsonse came from controller view display the result
+  C=>controller => process request data and send to Model
+
+  R=> Route /API END POINT
+  Middleware=>
+
+  Webpage  > Request > Midlleware > Route > controller > model > view
+
 
 
