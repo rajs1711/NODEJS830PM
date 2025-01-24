@@ -52,4 +52,27 @@ MVC Architecture :
   Webpage  > Request > Midlleware > Route > controller > model > view
 
 
+===========================================
+
+API ARCHITECTURE=> 
+   1. SOAP
+   2. REST 
+
+REST Architecture:
+    
+    Have to use Given HTTP Methods for your API  in given scenario
+
+  GET => when retrive the data 
+  PUT => When you have to update the data (Major update)
+  POST => when you have to save the data 
+  DELETE => when you have to delete the data 
+  PATCH=> This method is also use to update but for minor update
+
+
+   API => Datainterchange in JSON FORMAT
+
+GET => Retrive 
+
+POST => save + update + delete 
+
 

@@ -1,6 +1,7 @@
 const loginController = async (req, res) => {
 
     try {
+        console.log(req.body, '=========');
         const data = req.body;
         console.log(data);
         // logic to verify username and password is correct or not
