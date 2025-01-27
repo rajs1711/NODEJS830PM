@@ -38,41 +38,108 @@ Note : here dotenv and cors are two different package
         process.env.varibalname
         example: process.env.PORT
 
-======================================================
-Date: 23-JAN-2025 
+==================================================
+1. MVC ARCHITECTURE =>
+   
+   The Model-view-controller (MVC) is a design pattern in Web development.
+   This is the way to organize our code .
 
-MVC Architecture :
-  M=> Model  => Database Schema and opeartions (Businness logic) like query  and send response to controller 
-  V=>view  => When repsonse came from controller view display the result
-  C=>controller => process request data and send to Model
+   It consist of three layers :
+     1. Model => It represents the businness layer of application.
+                It is an object which carry the data and communicate with database and return response to controller.
 
-  R=> Route /API END POINT
-  Middleware=>
+     2. View  => It represents the presentation layer  of our application.
+                Use to Visualize the data which return from our model through controller.
+      
+     3. Controller => It works between model and view . Use to manage 
+                    the flow of application i.e whenever a new request it helps to process the
+                    request data and send it to model and once model return the reponse it send the data to view. 
 
-  Webpage  > Request > Midlleware > Route > controller > model > view
+      Notes: use the given screenshot to under MVC flow .
 
 
-===========================================
+Advantage :  
+    1. The modules or components are easy to maintain beacuse of
+      less Dependencies
+    2.useing MVC , the application becomes more understandable 
+    3. It gives benfit of reusability of code  
+    4. Developers caan work with the all three layers  simultineously.
+==================================================
+ 2. MIDDLWWARE:
+  
+    Middleware in Node js refers to components or modules that
+    sit between  the server and the application's main logic i.e 
+    between processing request and reponses.  
 
-API ARCHITECTURE=> 
-   1. SOAP
-   2. REST 
+    This provide functionalities like  
+      login authentication
+      routing  
+      data validation etc .
 
-REST Architecture:
+    * Middleware is a piece of code in an application pipeline
+    used to handle requests and reposnses 
     
-    Have to use Given HTTP Methods for your API  in given scenario
+    for example  
+     
+     Request (DATA )  =>  Middleware ( validate the Data) =>  IF the data validation success => then call next () i.e controller 
 
+                                                          => OR If the data validation fails => then it stop furter action ie. no call to controller. and it directly send response .
+===================================================
+3. REST =>
+  
+  API Design is one of the most crucial steps in software development.
+  Over the years various API Architectural styles have comes in picture  ,
+  including REST , SOAP ,WebHooks, GraphQL. 
+   
+  (REST => Representational State Transfer) is an Architectural
+  style for designing web services(API)  that enables communication 
+  between clients ( eg web browser , moibile app) and server  over the HTTP protocol.
+
+  Example:
+  CLIENT(APP/ WEB BROWSER)  =======>  Rest API  =======> WEB SERVER 
+                            <=======            <=======
+
+  Rest uses HTTP methods (GET , POST ,PUT , PATCH , DELETE)
   GET => when retrive the data 
   PUT => When you have to update the data (Major update)
   POST => when you have to save the data 
   DELETE => when you have to delete the data 
   PATCH=> This method is also use to update but for minor update
 
+Example: of API Endpoints: 
+  
+  Method :GET 
+  API END point : https://localhost:5000/api/v1/getemployee/101
+  PARAM: id =101
 
-   API => Datainterchange in JSON FORMAT
+  Method POST 
+  API END point : https://localhost:5000/api/v1/savemployee 
+  BODY : {
+     "username":"raj",
+     "password:"123",
+     "age":20
+  }
 
-GET => Retrive 
+4. HTTPS STATUS :
+   Each API repsonse includes an HTTP status code , 
+   Which indicates the result of the reuest . 
+   This meaningfull status code is importants for helping consumers 
+    of your API . 
 
-POST => save + update + delete 
+   Success: ( 200 to 299)
+      200 => OK 
+      201 => Created 
+
+   4XX =>Client Error
+      400 => Bad Request  ( invalid data )
+      401 => unauthorized 
+      404 => Not found 
+   
+   5XX => Server Error 
+      500 => Internal server error 
+      503 => service unavailable.
 
 
+
+    
+    
