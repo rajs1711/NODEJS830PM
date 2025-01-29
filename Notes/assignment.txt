@@ -1,0 +1,12 @@
+1. Create a API For Registration  And validate the data
+
+ API ENDPOINT  => /api/v1/createuser
+ Method: POST 
+ Payload: 
+  {
+    "username":"RAJS",  //required  // string
+    "email":"raj@gmail.com", //required //string
+    "password":"abc@123", required // string
+    "mobile":8210202331, required // number
+    "address":"patna"   // optional field // string
+  }
