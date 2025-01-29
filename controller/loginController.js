@@ -1,6 +1,7 @@
 const loginController = async (req, res) => {
 
     try {
+        console.log('Login controller hit')
         console.log(req.body, '=========');
         const data = req.body;
         console.log(data);
