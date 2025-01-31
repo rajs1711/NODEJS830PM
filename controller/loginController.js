@@ -1,3 +1,6 @@
+const { handleResponse, handleErrorReponse } = require("../helpers/response");
+const { errorMessage, statusCode } = require("../config/configuration.json");
+
 const loginController = async (req, res) => {
 
     try {
@@ -6,17 +9,12 @@ const loginController = async (req, res) => {
         const data = req.body;
         console.log(data);
         // logic to verify username and password is correct or not
-        res.status(200).send({
-            success: true,
-            message: "userloggedin successfully",
-            data
-        })
+        return handleResponse(res, statusCode.OK, data)
+
     } catch (error) {
         console.log(error);
-        res.status(400).send({
-            success: true,
-            message: "Something went wrong"
-        })
+        return handleErrorReponse(res, statusCode.NOT_FOUND, "something went wrong")
+
     }
 }
 

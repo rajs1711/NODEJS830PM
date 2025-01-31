@@ -1,0 +1,12 @@
+{
+    "statusCode":{
+        "OK":201,
+        "INTERNAL_SERVER_ERROR":500,
+        "NOT_FOUND":400
+    },
+    "errorMessage":{
+        "INTERNAL_SERVER_ERROR_MSG":" Something Went Wrong",
+        "NOT_FOUND_MSG":" Data Not Found",
+        "OK_MSG":"Successfully Done"
+    }
+}
