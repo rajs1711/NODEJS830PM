@@ -1,0 +1,86 @@
+# comparison between sql terminology and mondodb
+
+sql 
+  database 
+    table 
+	  columns 
+	    rows
+
+mongodb 
+   database 
+     collections 
+	    documents 
+		   key-value pair 
+		   
+		   Example:
+		   sql :
+		   
+		   Database :testdb 
+		     Table: student 
+			        Name   Email           phonnumber
+					Raj  abc@gmail.com     82102023939
+					Ra2  abc@gmail.com     82102023939
+		  
+		  MongoDB:
+		    Datbase : nodejs830pm 
+			  collections :students
+			         doc1=>{
+					    Name: Raj ,
+						Email: abc@gmail.com,
+						phonenumber:8210202331
+					 },
+					 doc1=>{
+					    Name: Raj2 ,
+						Email: abc@gmail.com,
+						phonenumber:8210202331
+                     }
+================================================
+MongoDB Cheat Sheet:
+
+
+
+1. show dbs;  => to display all databases 
+2. use <dbnam> =>
+     use nodejs830pm ; => helps to switch from one database
+                          to other or if the db is available it will create new db and switch to that db .
+
+
+Note: To show yoor new  database  in DB list =>your database have at least one collection .
+
+3. Create Collection :
+    db. createCollection('students');
+
+4. Data Insert under collection 
+   A. Single Insert
+
+    db.students.insert({
+        Name:"Raj",
+        Mobile:82102023331,
+        Email:abbsv@gmail.com
+    });
+
+   B. Multiple insert  
+
+    db.students.insertMany(
+        [
+        {
+        Name:"Amit",
+        Mobile:82102023331,
+        Email:abbsv@gmail.com
+        },
+        {
+        Name:"Summet",
+        Mobile:82102023331,
+        Email:abbsv@gmail.com
+        }
+        ]
+    );   
+
+    Note: whenever a document inserted in your collection , mongodb assign a unique _id to every document .
+
+5. To list (show) all data in collection:
+
+   db.students.find();
+
+Note: to display the output in proper format we have pretty() method 
+  db.students.preety();
