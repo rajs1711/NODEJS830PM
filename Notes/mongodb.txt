@@ -1,3 +1,4 @@
+=========================================05-FEB-2025==================
 # comparison between sql terminology and mondodb
 
 sql 
@@ -79,8 +80,90 @@ Note: To show yoor new  database  in DB list =>your database have at least one c
     Note: whenever a document inserted in your collection , mongodb assign a unique _id to every document .
 
 5. To list (show) all data in collection:
-
-   db.students.find();
+   sql => select * from students ;
+   Mongodb=>db.students.find();
 
 Note: to display the output in proper format we have pretty() method 
   db.students.preety();
+
+=========================================06-FEB-2025==================
+
+6. WAQ  to select name ,mobile, from students collection .
+
+db.students.find({},{Name:1,Mobile:1});
+
+7. WAQ to select name and email and _id should not return by deafult from students collection .
+sql=> select Name, Email  from students
+Mongodb=>db. students.find({},{Name:1,Email:1,_id:0});
+
+8 .WAQ to find student deatils whose mobile is 8210202331
+
+ sql=> select * from students where Mobile=8210202331
+ MONGODB=> db.students.find({Mobile:8210202331});
+
+9.WAQ to find student Name  whose mobile number is 8210202331
+sql => select Name from students where Mobile=8210202331.
+Mongodb=> db.students.find({Mobile:8210202331},{Name:1,_id:0});
+
+10 . WAQ to find Student details where Mobile number 
+    not equals to 8210202331
+
+Sql => select * from students where mobile <>8210202331
+Mongodb => db.students.find({Mobile:{$ne:8210202331}});
+
+Note: $ne  operator use to declare not equal to 
+
+10 . WAQ to find Student Name  where Mobile number 
+    not equals to 8210202331
+
+Sql => select Name from students where mobile <>8210202331
+Mongodb => db.students.find(
+    {
+    Mobile:{$ne:8210202331}
+    },
+    {
+        Name:1,_id:0
+    });
+
+11. WAQ to find student all deatils  where mobile is 8210202331
+    and Name is Raj2
+
+    Sql => select * from students where Mobile=8210202331 and Name='Raj2'
+    MONGODB=>db.students.find(
+        {
+            Mobile:8210202331,
+            Name:'Raj2'
+        }
+    );
+Note: Here we implement and condition using comma(,) in same block{}
+
+12. WAQ to find students Mobile whose Name is Raj and Email is abc@gmail.com and age=25
+sql => select mobile from students where name='Raj' and Email='abc@gmail.com' and age=25
+MONGODB=>
+  db.students.find(
+    {
+        Name:'Raj',
+        Email:'abc@gmail.com',
+        Age:25
+    },
+    {
+        Mobile:1,
+        _id:0
+    }
+  );
+
+13. select students all details where  age is greater than 20
+ sql => select * from students where age > 20 
+ Mongodb=> db.students.find({
+    age:{$gt:20}
+ });
+
+ Note: $gt  got greater than 
+
+14. select students all details where  age is less than 20
+ sql => select * from students where age < 20 
+ Mongodb=> db.students.find({
+    age:{$lt:20}
+ });
+
+ Note: $lt  got lower than 
