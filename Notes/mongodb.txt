@@ -167,3 +167,118 @@ MONGODB=>
  });
 
  Note: $lt  got lower than 
+
+ 15. select students details whose salary is greater than equals to 2000 and less than equal to 6000
+
+ sql=> select * from students where salary>=19 and salary<=25;
+ mongodb=> db.students.find(
+    {
+        salary:{$gte:2000 , $lte :5000}
+    }
+ );
+
+ Note: $gte : greater than equals to 
+       $lte : less than equals to 
+
+15 .select employees who belongs to department Engineering or Sales 
+  sql => select * from employees where departemnt ='Engineering' or departemnt='Sales';
+  Mongodb => db.employees.find(
+    {
+        $or:[{department:'Engineering'},{department:'sales'}]
+    }
+  );
+
+16. select employess who belongs to Engineering department and salary is 90000
+
+sql => select * from employees where departemnt='Engineering' and salary=90000
+
+mongodb :
+   db.employees.find({
+      departemnt:'Engineering',
+      salary:90000
+   });
+     Or
+   db.employees.find({
+      $and:[{department:'Engineering'},{salary:'90000'}]
+   });
+
+17. WAQ to select employees where departemnt='Engineering' 
+and salary 60000 or 70000;
+
+Mongodb=> db.employees.find(
+    {
+        department:'Engineering' ,
+        $or:[{salary:60000},{salary:70000}]
+    }
+);
+
+or 
+
+db. employees.find({
+    $and:[
+        {
+            department:'Engineering'
+        },
+        {
+             $or:[{salary:60000},{salary:90000}]
+        }
+    ]
+});
+
+18. select employees  where 
+[(department =sales and salary 70000) 
+and (managerId=29 or managerId=30) ] or  employeePosition='Teamlead'
+
+db.employees.find({
+    $or:[
+        {
+            $and:[
+                {
+                 $and:[
+                    {department :sales},
+                    {salary :70000}
+                 ]
+                },
+                {
+                 $or:[
+                    {managerId:29},
+                    {managerId:30}
+                 ]
+                }
+            ]
+        },
+        {
+         employeePosition:'Teamlead'
+        }
+    ]
+});
+
+
+19: select employees whose age in 25 , 30 , 45
+
+sql=> select employees where age in(25,30,45);
+mongodb=>
+db.employees.find({
+  age:{$in:[25,30,45]}
+})
+
+19: select employees whose age notin 25 , 30 , 45
+
+sql=> select employees where age in(25,30,45);
+mongodb=>
+db.employees.find({
+  age:{$nin:[25,30,45]}
+})
+
+Note: $in  and $nin (not in)  and pass data in array
+
+20.select employees whose age not equal to 25 
+
+mongodb=>
+db.employees.find({
+    age:{$ne:25}
+})
+Note: &ne : NOT
+
+
+
