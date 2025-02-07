@@ -180,6 +180,8 @@ MONGODB=>
  Note: $gte : greater than equals to 
        $lte : less than equals to 
 
+=====================07-FEB-2025====================
+
 15 .select employees who belongs to department Engineering or Sales 
   sql => select * from employees where departemnt ='Engineering' or departemnt='Sales';
   Mongodb => db.employees.find(
