@@ -282,5 +282,82 @@ db.employees.find({
 })
 Note: &ne : NOT
 
+===================08-02-25=======
+21. select total number of records in employees table;
+
+sql => select count(*) from employees 
+Mongodb => db.employees.count();
+Note: count() methods returns total number of documents in ypur collection .
+
+22. select count of employee whose salary is greater than 85000.
+
+db.employees.find({
+    salary:{$gt:85000}
+}).count();
+
+or 
+db.employees.count({
+    salary:{$gt:85000}
+})
+
+
+23. waq to find employee deatails and sort salary in ascending order .
+
+mnongdb=> db.employees.find().sort({salary:1});
+Note: sort(salary:1) this methods helps to sort dcoument 
+      and 1 denotes ascending order by salary column
+
+24. waq to find employee deatails and sort salary in desceding order .
+db.employees.find().sort({salary:-1});
+Note:-1 reprsent desceding order.
+
+25. WAQ to find employee deatils who belongs to sales department 
+    and sort data a/c to higher salary comes first .
+
+   db.employee.find({
+    departemnt:"sales",
+   }).sort({salary:-1});
+
+26. WAQ to find students deatils where column age exists 
+
+db.students.find({age:{$exists:true}});
+
+27. WAQ to find students deatils where column age does not exists 
+db.students.find({age:{$exists:false}});
+
+
+28.WAQ to find students details where name and email column exists 
+db.students.find(
+    {
+        $and:[
+            {Name:{$exists:true}},
+            {Email:{$exists:true}},
+        ]
+    }
+);
+
+29.WAQ to find students name where [name and email column exists ]
+ and mobile =8210202331
+
+db.students.find(
+    {
+        $and:[
+            {Name:{$exists:true}},
+            {Email:{$exists:true}},
+            {mobile:8210202331}
+        ]
+    },
+    {
+        name:1,
+        _id:0
+    }
+);
+
+==================UPDATE ==================
+30 . waq to update student mobile number whose name is Raj .
+
+=> sql => update students set Mobile=9709997286 where name='raj'.
+mongodb=> > db.students.updateOne({Name:"Raj"},{$set:{Mobile:9709997286}});
+
 
 
