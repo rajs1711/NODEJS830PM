@@ -1,4 +1,3 @@
-=========================================05-FEB-2025==================
 # comparison between sql terminology and mondodb
 
 sql 
@@ -53,7 +52,7 @@ Note: To show yoor new  database  in DB list =>your database have at least one c
 
 4. Data Insert under collection 
    A. Single Insert
-
+=================INSERT ======================
     db.students.insert({
         Name:"Raj",
         Mobile:82102023331,
@@ -78,6 +77,7 @@ Note: To show yoor new  database  in DB list =>your database have at least one c
     );   
 
     Note: whenever a document inserted in your collection , mongodb assign a unique _id to every document .
+==============SELECT ALL DATA=============================
 
 5. To list (show) all data in collection:
    sql => select * from students ;
@@ -86,16 +86,17 @@ Note: To show yoor new  database  in DB list =>your database have at least one c
 Note: to display the output in proper format we have pretty() method 
   db.students.preety();
 
-=========================================06-FEB-2025==================
-
+=======SELECT PARTICULA FIELD==================
 6. WAQ  to select name ,mobile, from students collection .
 
 db.students.find({},{Name:1,Mobile:1});
 
+============HIDE DEFAULT FEILD _ID===============
 7. WAQ to select name and email and _id should not return by deafult from students collection .
 sql=> select Name, Email  from students
 Mongodb=>db. students.find({},{Name:1,Email:1,_id:0});
 
+=================CONDITION DURING SELECT=============
 8 .WAQ to find student deatils whose mobile is 8210202331
 
  sql=> select * from students where Mobile=8210202331
@@ -107,7 +108,7 @@ Mongodb=> db.students.find({Mobile:8210202331},{Name:1,_id:0});
 
 10 . WAQ to find Student details where Mobile number 
     not equals to 8210202331
-
+==================NOT EQUAL========================
 Sql => select * from students where mobile <>8210202331
 Mongodb => db.students.find({Mobile:{$ne:8210202331}});
 
@@ -124,7 +125,7 @@ Mongodb => db.students.find(
     {
         Name:1,_id:0
     });
-
+===============AND CONDITION====================
 11. WAQ to find student all deatils  where mobile is 8210202331
     and Name is Raj2
 
@@ -137,6 +138,7 @@ Mongodb => db.students.find(
     );
 Note: Here we implement and condition using comma(,) in same block{}
 
+=============MULTIPLE AND===============
 12. WAQ to find students Mobile whose Name is Raj and Email is abc@gmail.com and age=25
 sql => select mobile from students where name='Raj' and Email='abc@gmail.com' and age=25
 MONGODB=>
@@ -151,7 +153,7 @@ MONGODB=>
         _id:0
     }
   );
-
+==============GREATER THAN ======================
 13. select students all details where  age is greater than 20
  sql => select * from students where age > 20 
  Mongodb=> db.students.find({
@@ -159,7 +161,7 @@ MONGODB=>
  });
 
  Note: $gt  got greater than 
-
+==============LOWER THAN ===================
 14. select students all details where  age is less than 20
  sql => select * from students where age < 20 
  Mongodb=> db.students.find({
@@ -168,6 +170,7 @@ MONGODB=>
 
  Note: $lt  got lower than 
 
+==================BETWEEN =======================
  15. select students details whose salary is greater than equals to 2000 and less than equal to 6000
 
  sql=> select * from students where salary>=19 and salary<=25;
@@ -180,8 +183,7 @@ MONGODB=>
  Note: $gte : greater than equals to 
        $lte : less than equals to 
 
-=====================07-FEB-2025====================
-
+======================OR CONDITION=================
 15 .select employees who belongs to department Engineering or Sales 
   sql => select * from employees where departemnt ='Engineering' or departemnt='Sales';
   Mongodb => db.employees.find(
@@ -189,7 +191,7 @@ MONGODB=>
         $or:[{department:'Engineering'},{department:'sales'}]
     }
   );
-
+=======================AND OPERATOR==================
 16. select employess who belongs to Engineering department and salary is 90000
 
 sql => select * from employees where departemnt='Engineering' and salary=90000
@@ -255,7 +257,7 @@ db.employees.find({
     ]
 });
 
-
+======================IN ==============================
 19: select employees whose age in 25 , 30 , 45
 
 sql=> select employees where age in(25,30,45);
@@ -263,7 +265,7 @@ mongodb=>
 db.employees.find({
   age:{$in:[25,30,45]}
 })
-
+=====================NOT IN========================
 19: select employees whose age notin 25 , 30 , 45
 
 sql=> select employees where age in(25,30,45);
@@ -282,7 +284,7 @@ db.employees.find({
 })
 Note: &ne : NOT
 
-===================08-02-25=======
+=====================COUNT====================
 21. select total number of records in employees table;
 
 sql => select count(*) from employees 
@@ -300,6 +302,7 @@ db.employees.count({
     salary:{$gt:85000}
 })
 
+=====================ORDER BY ==========================
 
 23. waq to find employee deatails and sort salary in ascending order .
 
@@ -318,6 +321,7 @@ Note:-1 reprsent desceding order.
     departemnt:"sales",
    }).sort({salary:-1});
 
+======================EXISTS ====================
 26. WAQ to find students deatils where column age exists 
 
 db.students.find({age:{$exists:true}});
@@ -353,11 +357,62 @@ db.students.find(
     }
 );
 
-==================UPDATE ==================
+==================UPDATE ===============================
 30 . waq to update student mobile number whose name is Raj .
 
 => sql => update students set Mobile=9709997286 where name='raj'.
 mongodb=> > db.students.updateOne({Name:"Raj"},{$set:{Mobile:9709997286}});
+====================DELETE=============================
+31.WAQ to selete student whose name is 'Raj'
+db.students.deleteOne({Name:"Raj"});
+db.students.deletMany({Name:"Raj"});
+=====================DROP ====================
+32. WAQ to remove any collection 
+db.collection.drop();
+====================TRUNCATE==================
+32.Truncate your collection .
+db.students.deletMany({});
+====================LIMIT ====================
+33.WAQ to find two document from our collection 
+db.stundets.find().limit(2);
+==================== SKIP =====================
+34.WAQ to find two document after skiping first document
+db.students.find().skip(1).limit(2);
+======================LIKE================
+35. WAQ to find student details whose name like "Raj2"
 
+db.students.find({
+    Name:{$regex:"Raj"}
+});
 
+36.WAQ to find student details whose name like "Raj" and the search should be incase sensetive
+db.students.find({ Name: { $regex: "Raj" ,$options:"i"} });
 
+Note: By deafult monogdb search in case sensetive mode
+Note: basically here is it is searching the substring "Raj"
+
+37. WAQ to find student deatils whose name starts with Raj.
+
+db.students.find({
+    Name:{$regex:"^Raj"}
+});
+Note: ^ symbol denotes that name should start with "Raj"
+
+38. WAQ to find student details whose name ends with "Raj"
+db.students.find({
+    Name:{$regex:"Raj$"}
+});
+
+39. WAQ to find student deatils whose name starts with AB and ends j and case insensative
+
+db.students.find({
+    Name:{$regex:"^AB.*j$" , $options:"i"}
+});
+40. WAQ to find student deatils where letter "h" exist in third place of his name.
+
+db.students.find({
+    Name:{$regex:"^..h",$options:"i"}
+});
+
+41.WAQ to find student details whose name not ends with Kumar
+db.students.find({ Name: { $not: { $regex: "Kumar$", $options: "i" } } });
