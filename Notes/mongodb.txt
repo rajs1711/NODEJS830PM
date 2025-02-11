@@ -416,3 +416,98 @@ db.students.find({
 
 41.WAQ to find student details whose name not ends with Kumar
 db.students.find({ Name: { $not: { $regex: "Kumar$", $options: "i" } } });
+
+================= Handling Object and Array of data ==================
+42. WAQ to insert data which are in object and in array
+
+db.students.insertOne({
+    Name:"Raj",
+    Address:{
+        permanent:"patna",
+        temporary:"delhi"
+    },
+    Contact:{
+        Calling:8210202331,
+        Whatsapp:9709997286
+    },
+    Courses:["NODE","EXPRESS-JS" ,"MONGODB","React"]
+});
+
+43. WAQ to search student deatils whose temporary address is delhi
+db.students.find({
+    "Address.temporary":"delhi"
+});
+
+44. WAQ to search student deatils whose temporary address is delhi and
+    he is enrolled in course "MongoDB"
+
+db.students.find({ "Address.temporary": "delhi" ,"Courses":"MongoDB"});
+
+45. WAQ to update temporary address delhi to pune whose temporary address is delhi
+
+db.students.updateOne(
+    {"Address.temporary":"delhi"},
+    {$set:{"Address.temporary":"pune"}}
+    );
+
+46. Insert 
+db.students.insertOne({
+    Name:"Ajit",
+    Address:{
+        permanent:"patna",
+        temporary:"delhi"
+    },
+    Contact:{
+        Calling:8210202331,
+        Whatsapp:9709997286
+    },
+    Courses:["NODE","EXPRESS-JS" ,"MONGODB","React"],
+    CourseStatus:[
+        {"NODE":"IN-PROGRES"},
+        {"EXPRESSJS":"IN-PROGRES"},
+        {"MONGODB":"IN-PROGRES"},
+        {"React":"NOT STARTED"}
+    ]
+});
+
+
+47 . WAQ  to find the resturants which belongs to the borough bronx 
+and cusine is American or chinese
+
+db.returants.find({
+    "borough":"Queens",
+    $or:[
+        {"cusine":"American"},
+        {"cusine":"chinese"}
+    ]
+});
+ 
+48. WAQ to find resturants whose building is 88825 and zipcode 11369
+
+db.restaurants.find({
+  "address.building": "88825",
+  "address.zipcode": "11369"
+})
+49 waq to find resturants  where street exist in address 
+db.restruants.find({
+db.restaurants.find({
+  "address.street": { $exists: true }
+})
+
+50. WAQ to find resturants where at least one grade score less than 5
+db.restaraunts.find({ "grades.score":{$lt:5}})
+51. WAQ to find resturants whose socre is 3 and 5 and belongs to zipcode 80002
+
+db.restaraunts.find({
+    $and:[
+        {"grades.score":3},
+        {"grades.score":5},
+        {"address.zipcode":80002}
+    ]
+});
+
+52. WAQ to find resturants building,cusine,name where resturant_id is 110
+db.returants.find({"restaurant_id":110},{name:1,cuisine:1,address.building:1});
+
+53. WAQ to find resturants building,cusine,name where shop  exist in nlast of it's name
+db.restaurants.find({Name:{$regex:"shop$",$options:"i"}},{"address.building:1,name:1,cuisine:1});
