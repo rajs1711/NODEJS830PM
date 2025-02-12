@@ -511,3 +511,89 @@ db.returants.find({"restaurant_id":110},{name:1,cuisine:1,address.building:1});
 
 53. WAQ to find resturants building,cusine,name where shop  exist in nlast of it's name
 db.restaurants.find({Name:{$regex:"shop$",$options:"i"}},{"address.building:1,name:1,cuisine:1});
+
+===========================  Aggregation PIPELINE ===================
+  * GroupBY  * avg,sum,max,min,sum * pipeline ,* stage
+=====================================================================
+54. WAQ to find out total number of resturants in each location .
+
+Notes: to implement group we have to use Aggregation pipline .
+    
+       An aggregation pipleine is consist of one or more that one stages that process documents.
+         each stage performs an operation on the input documents  and which is the output for next stage .
+    An aggregation pipeline can return results of groups of document  for Exampl
+    total count , sum , average . or we can perform joins between collections.
+
+syntex:
+db. collectionname.aggregate([
+    {<stage 1>},
+    {<stage 2>},
+    {<stage 3>}
+]);
+
+db.returants.aggregate([
+    {
+        $group:{
+            _id:"$borough",
+            totalCount:{$sum:1 }
+        }
+    }
+]);
+
+
+55. WAQ to find total salary dispose in each department 
+
+db.employees.aggregate([
+    {
+        $group:{
+            _id:"$department",
+            totalSalary:{$sum:"$salary"}
+        }
+    }
+]);
+
+56. WAQ to find total salary dispose in each department  and sort the data in ascending order a/c to 
+totalSalary of each department in ascending order
+db.employees.aggregate([
+    {
+        $group:{
+            _id:"$department",
+            totalSalary:{$sum:"$salary"}
+        }
+    },
+    {
+      $sort:{totalSalary:1}  
+    }
+]);
+
+57. WAQ to find total salary dispose in each department  and sort the data in ascending order a/c to 
+totalSalary of each department in ascending order and output only top two documents.
+db.employees.aggregate([
+    {
+        $group:{
+            _id:"$department",
+            totalSalary:{$sum:"$salary"}
+        }
+    },
+    {
+      $sort:{totalSalary:1}  
+    },
+    {
+      $limit:2
+    }
+]);
+
+
+58. WAQ to find total salary dispose in each department and for each branch
+db.employees.aggregate([
+    {
+        $group:{
+            _id:{branch:"$branch",departemnt:"$department"}
+            totalSalary:{$sum:"$salary"}
+        }
+    }
+]);
+
+Note: Multiple collumns groups
+
+
