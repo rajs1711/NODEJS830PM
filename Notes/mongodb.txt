@@ -596,4 +596,219 @@ db.employees.aggregate([
 
 Note: Multiple collumns groups
 
+=============Agrregation pipline Lookups(joins)=====================
+$lookups: is use to get data from more than one collection basically this helps
+         to establish joins between the collection .
 
+Collection : Orders 
+db.Orders.insertMany([
+{
+    "order_number":"001",
+    "cust_id":"C1",
+    "order_total":10000,
+    "payment_mode":"online",
+    "payment_method":"UPI"
+ },
+ {
+    "order_number":"002",
+    "cust_id":"C1",
+    "order_total":5000,
+    "payment_mode":"online",
+    "payment_method":"UPI"
+ },
+  {
+    "order_number":"003",
+    "cust_id":"C2",
+    "order_total":12000,
+    "payment_mode":"OFFLINE",
+    "payment_method":"COD"
+ },
+   {
+    "order_number":"004",
+    "cust_id":"C2",
+    "order_total":500,
+    "payment_mode":"ONLINE",
+    "payment_method":"UPI"
+ }
+]);
+ 
+ Collection:Customers
+ db.Customers.insertMany([
+{
+    "cust_id":"C1",
+    "Name":"Raj",
+    "Email":"raj@gmail.com",
+    "Address":"PATNA"
+ },
+  {
+    "cust_id":"C2",
+    "Name":"Prince",
+    "Email":"prince@gmail.com",
+    "Address":"PATNA"
+ },
+  {
+    "cust_id":"C3",
+    "Name":"Akash",
+    "Email":"akash@gmail.com",
+    "Address":"PATNA"
+ }
+ ]);
+ 
+
+59. WAQ To find orders with customer details .
+
+db.Orders.aggregate([
+ {
+    $lookup:{
+        from:"Customers",
+        localField:"cust_id", // orders table customer id
+        foreignField:"cust_id",
+        as:"Customer_details"
+    }
+ }
+]);
+Note:$lookup  is use to perform join between two or more than two  collections basically this helps
+         to get data and check conditions between two collection .
+
+60. WAQ to find orderdetails(order_number,order_total,payment_method)
+     and respective customer deatils (cust_id,name,address)
+
+Note: $project: To fetch Only specified columns/keys 
+Note: $unwind: To flatten resultent array
+
+db.Orders.aggregate([
+    {
+        $lookup:{
+            from:"Customers",
+            localField:"cust_id", 
+            foreignField:"cust_id",
+            as:"Customer_details"
+        }
+    },
+    {
+      $unwind:"$Customer_details"
+    },
+    {
+      $project:{
+        "order_number":1,
+        "order_total":1,
+        payment_method:1,
+        "Customer_details.cust_id":1,
+        "Customer_details.Name":1,
+        "Customer_details.Address":1
+      }
+    }
+]);
+
+
+61. WAQ to find orderdetails(order_number,order_total,payment_method)
+     and respective customer deatils (cust_id,name,address) where cust_id is "C1"
+
+
+db.Orders.aggregate([
+    {
+       $match:{
+        "cust_id":"C1"
+       }
+    },
+    {
+        $lookup:{
+            from:"Customers",
+            localField:"cust_id", 
+            foreignField:"cust_id",
+            as:"Customer_details"
+        }
+    },
+    {
+      $unwind:"$Customer_details"
+    },
+    {
+      $project:{
+        "order_number":1,
+        "order_total":1,
+        "payment_method":1,
+        "Customer_details.cust_id":1,
+        "Customer_details.Name":1,
+        "Customer_details.Address":1
+      }
+    }
+]);
+
+Note: $match: is use to set conditions while perfom joins
+
+62. WAQ to find orderdetails(order_number,order_total,payment_method)
+     and respective customer deatils (cust_id,name,address) where order total amount is greater than equals 12000
+
+
+db.Orders.aggregate([
+    {
+       $match:{
+        "order_total":{$gte:12000}
+       }
+    },
+    {
+        $lookup:{
+            from:"Customers",
+            localField:"cust_id", 
+            foreignField:"cust_id",
+            as:"Customer_details"
+        }
+    },
+    {
+      $unwind:"$Customer_details"
+    },
+    {
+      $project:{
+        "order_number":1,
+        "order_total":1,
+        "payment_method":1,
+        "Customer_details.cust_id":1,
+        "Customer_details.Name":1,
+        "Customer_details.Address":1
+      }
+    }
+]);
+
+63.WAQ to find customers details with orders 
+
+db.Customers.aggregate([
+    {
+        $lookup:{
+            from:"Orders",
+            localField:"cust_id", 
+            foreignField:"cust_id",
+            as:"order_details"
+        }
+    }
+]);
+
+
+Note:  By default mongodb perform left join means (all data from left collection and matching data from right collection)
+Note: Above all examples are of LEFT JOIN 
+
+64.WAQ to find customers details with orders and it should returns 
+   only those customer which have orders (INNER JOIN);
+
+
+db.Customers.aggregate([
+    {
+      $match:{"cust_id":"C1"}
+    },
+    {  
+        $lookup:{
+            from:"Orders",
+            localField:"cust_id", 
+            foreignField:"cust_id",
+            as:"order_details"
+        }
+    },
+    { 
+            $match:{
+                "order_details":{$ne:[]}  // Use to perform inner join
+            }
+        
+    }
+]);
+
+
+Note: you can use multiple lookup , match in your pipeline
