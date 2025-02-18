@@ -10,3 +10,9 @@
     "mobile":8210202331, required // number
     "address":"patna"   // optional field // string
   }
+
+
+2. implement login signup and changepassword 
+
+API: POST :http://localhost:5000/api/v1/changepassword
+username ,oldpassword ,newpassword
