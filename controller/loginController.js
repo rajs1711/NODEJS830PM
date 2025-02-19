@@ -2,11 +2,12 @@ const { handleResponse, handleErrorReponse } = require("../helpers/response");
 const { errorMessage, statusCode } = require("../config/configuration.json");
 const signupModel = require('../model/signupModel');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+
 const loginController = async (req, res) => {
 
     try {
         const { username, password } = req.body;
-
         const user = await signupModel.find({ email: username }, { name: 1, password: 1 });
         if (user.length > 0) {
 
@@ -16,15 +17,20 @@ const loginController = async (req, res) => {
             // comapre your given password and stored password 
             const isValid = await bcrypt.compare(password, db_pwd);
             if (isValid) {
-                const data = [
+                const data = {
+                    "name": db_name,
+                    "email": username
+                }
+
+                //logic to create jwt token 
+                const token = jwt.sign({ data }, process.env.JWT_SECRETKEY, { expiresIn: '2m' });
+                const response = [
                     {
-                        "msg": "Login successfully",
-                        "token": "abcd@8dhdhdgdh89h",
-                        "name": db_name,
-                        "email": username
+                        "msg": "Login Sucessfuly",
+                        "token": token
                     }
                 ]
-                return handleResponse(res, statusCode.OK, data);
+                return handleResponse(res, statusCode.OK, response);
             } else {
                 const data = [
                     {

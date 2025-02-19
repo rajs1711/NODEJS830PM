@@ -12,7 +12,7 @@ const apiprefix = process.env.APIPREFIX;
 
 app.use(apiprefix, require("./routes/commonRoutes"));
 app.use(apiprefix, require("./routes/loginRoutes"));
-app.use(apiprefix, require("./routes/orderRoutes"));
+app.use(apiprefix, require("./routes/profileRoutes"));
 app.use(apiprefix, require("./routes/signupRoutes"));
 app.use(globalErrors);
 
