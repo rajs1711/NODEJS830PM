@@ -23,7 +23,7 @@ const loginController = async (req, res) => {
                 }
 
                 //logic to create jwt token 
-                const token = jwt.sign({ data }, process.env.JWT_SECRETKEY, { expiresIn: '2m' });
+                const token = jwt.sign({ data }, process.env.JWT_SECRETKEY, { expiresIn: '2h' });
                 const response = [
                     {
                         "msg": "Login Sucessfuly",

@@ -14,6 +14,7 @@ app.use(apiprefix, require("./routes/commonRoutes"));
 app.use(apiprefix, require("./routes/loginRoutes"));
 app.use(apiprefix, require("./routes/profileRoutes"));
 app.use(apiprefix, require("./routes/signupRoutes"));
+app.use(apiprefix, require("./routes/resturantRoutes"));
 app.use(globalErrors);
 
 const PORT = process.env.PORT || 7000;

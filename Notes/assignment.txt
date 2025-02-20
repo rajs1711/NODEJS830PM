@@ -16,3 +16,16 @@
 
 API: POST :http://localhost:5000/api/v1/changepassword
 username ,oldpassword ,newpassword
+
+3. Create validation rules for createresturant API 
+4. Create API for LIST All Resturants
+5. Create APi For Create Food for Resturant 
+   model [
+       resturantid: 
+       Name ,
+       imageurl,
+       price ,
+       cateorgy:(veg/nonveg),
+       rating
+   ]
+6.Create API to LIST ALL FOR particular resturn
