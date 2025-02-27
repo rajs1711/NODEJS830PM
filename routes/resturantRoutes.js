@@ -2,7 +2,7 @@ const express = require("express")
 const router = express.Router();
 const { authenticateJWT } = require('../middleware/authentication');
 const { createResturant } = require('../controller/ResturantController')
-
+const uploadHandler = require('../middleware/uploadcloudinary');
 //import fileupload middleware 
 
 const upload = require('../middleware/fileupload');

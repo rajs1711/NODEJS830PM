@@ -38,6 +38,23 @@ const signupController = async (req, res) => {
     }
 }
 
+const profileImageController = async (req, res) => {
+    try {
+        //console.log(req.profileImageUrl)
+        const data = [{
+            profilePublicUrl: req.profileImageUrl,
+        },
+        req.userinfo
+        ]
+
+        return handleResponse(res, statusCode.OK, data);
+    } catch (err) {
+        console.log(err);
+        return handleErrorReponse(res, statusCode.NOT_FOUND, "something went wrong")
+    }
+}
+
 module.exports = {
-    signupController
+    signupController,
+    profileImageController
 }
