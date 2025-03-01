@@ -7,6 +7,11 @@ exports.loginvalidation = {
         accesslevel: Joi.string().optional()
     })
 }
+exports.loginvalidation_v2 = {
+    body: Joi.object({
+        username: Joi.string().required()
+    })
+}
 
 exports.forgotpassword = {
     body: Joi.object({

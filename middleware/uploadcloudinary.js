@@ -57,6 +57,7 @@ const uploadHandler = (req, res, next) => {
                 req.profileImageUrl = result.secure_url;
                 next();  // call next function routes
             } catch (err) {
+                console.log(err);
                 return res.status(500).json({
                     msg: "Cloudinary Error"
                 })

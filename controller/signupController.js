@@ -40,7 +40,13 @@ const signupController = async (req, res) => {
 
 const profileImageController = async (req, res) => {
     try {
-        //console.log(req.profileImageUrl)
+        const loggedinuseremail = req.userinfo.data.email;
+        const rs = await signupModel.updateOne({
+            email: loggedinuseremail
+        }, {
+            $set: { profileImage: req.profileImageUrl }
+        });
+
         const data = [{
             profilePublicUrl: req.profileImageUrl,
         },
