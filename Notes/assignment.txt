@@ -29,3 +29,4 @@ username ,oldpassword ,newpassword
        rating
    ]
 6.Create API to LIST ALL FOR particular resturn
+7. Create API to verify OTP of user and return token 

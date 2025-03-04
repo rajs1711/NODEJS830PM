@@ -5,19 +5,22 @@ const OTPSchema = require('../model/otpModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const sendEmail = require('../helpers/sendEmail');
+const logger = require('../helpers/logger');
+const routepath = 'controller/loginController'
 const loginController = async (req, res) => {
-
+    logger.log({ level: 'error', label: routepath, message: 'Login function execution start' });
     try {
         const { username, password } = req.body;
         const user = await signupModel.find({ email: username }, { name: 1, password: 1 });
         if (user.length > 0) {
-
+            logger.log({ level: 'info', label: routepath, message: 'Username Found' });
             const db_pwd = user[0].password;
             const db_name = user[0].name;
 
             // comapre your given password and stored password 
             const isValid = await bcrypt.compare(password, db_pwd);
             if (isValid) {
+                logger.log({ level: 'info', label: routepath, message: 'valid password' });
                 const data = {
                     "name": db_name,
                     "email": username
@@ -31,8 +34,10 @@ const loginController = async (req, res) => {
                         "token": token
                     }
                 ]
+                logger.log({ level: 'info', label: routepath, message: 'sucessfully send response' });
                 return handleResponse(res, statusCode.OK, response);
             } else {
+                logger.log({ level: 'Error', label: routepath, message: 'Wrong Password' });
                 const data = [
                     {
                         "msg": "Wrong Password"
@@ -43,6 +48,7 @@ const loginController = async (req, res) => {
 
 
         } else {
+            logger.log({ level: 'Error', label: routepath, message: 'Wrong username' });
             const data = [
                 {
                     "msg": "wrong username"
@@ -52,10 +58,8 @@ const loginController = async (req, res) => {
         }
 
 
-
-
     } catch (error) {
-        console.log(error);
+        logger.log({ level: 'info', label: routepath, message: `Execpetion occur ${error}` });
         return handleErrorReponse(res, statusCode.NOT_FOUND, "something went wrong")
 
     }

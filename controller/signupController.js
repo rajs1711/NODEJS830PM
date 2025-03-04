@@ -2,8 +2,11 @@ const { handleResponse, handleErrorReponse } = require("../helpers/response");
 const { errorMessage, statusCode } = require("../config/configuration.json");
 const signupModel = require('../model/signupModel');
 const bcrypt = require('bcrypt');
-const signupController = async (req, res) => {
+const logger = require('../helpers/logger');
+const routepath = 'controller/signupController';
 
+const signupController = async (req, res) => {
+    logger.log({ level: 'info', label: routepath, message: 'signup function execution start' });
     try {
         const { name, email, password } = req.body
 

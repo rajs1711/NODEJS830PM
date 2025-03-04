@@ -1,0 +1,17 @@
+2025-03-04 15:18:16 INFO [controller/loginController] :Login function execution start 
+2025-03-04 15:18:16 INFO [controller/loginController] :Username Found 
+2025-03-04 15:18:16 INFO [controller/loginController] :valid password 
+2025-03-04 15:18:16 INFO [controller/loginController] :sucessfully send response 
+2025-03-04 15:18:39 INFO [controller/loginController] :Login function execution start 
+2025-03-04 15:18:39 INFO [controller/loginController] :Username Found 
+2025-03-04 15:18:39 INFO [controller/loginController] :valid password 
+2025-03-04 15:18:39 INFO [controller/loginController] :sucessfully send response 
+2025-03-04 15:21:45 INFO [controller/signupController] :signup function execution start 
+2025-03-04 15:22:13 INFO [controller/loginController] :Login function execution start 
+2025-03-04 15:22:13 INFO [controller/loginController] :Username Found 
+2025-03-04 15:22:13 INFO [controller/loginController] :valid password 
+2025-03-04 15:22:13 INFO [controller/loginController] :sucessfully send response 
+2025-03-04 15:22:45 ERROR [controller/loginController] :Login function execution start 
+2025-03-04 15:22:45 INFO [controller/loginController] :Username Found 
+2025-03-04 15:22:45 INFO [controller/loginController] :valid password 
+2025-03-04 15:22:45 INFO [controller/loginController] :sucessfully send response 
