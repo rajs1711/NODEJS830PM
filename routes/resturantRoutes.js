@@ -1,13 +1,14 @@
 const express = require("express")
 const router = express.Router();
 const { authenticateJWT } = require('../middleware/authentication');
-const { createResturant } = require('../controller/ResturantController')
+const { createResturant, listAllResturants } = require('../controller/ResturantController')
 const uploadHandler = require('../middleware/uploadcloudinary');
 //import fileupload middleware 
 
 const upload = require('../middleware/fileupload');
-// Define our Routes
-router.post("/createresturant", authenticateJWT, createResturant);
+// Define our Routes authenticateJWT
+router.post("/createresturant", createResturant);
+router.get("/listallresturants", listAllResturants);
 // Single File upload
 router.post("/uploadcover", upload.single('file'), (req, res) => {
     res.json({ message: 'File upload successfully' })

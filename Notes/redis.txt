@@ -1,0 +1,10 @@
+REDIS  => it emarged as a powerful toold for data storage and caching.
+          (REMORE DICTIONARY SERVER)  it is  and open-source in memory data storage system. 
+		  REDIS is renowensed for its execptional speed , making it an ideas chocie for caching and realt time applications.
+		    
+			FEATURES: 
+			
+			   IN MEMORY DATA STORAGE  : stores dta in RAM .
+			   IT SUPPORTS VARIOUS DATA STRUCTURE: like strings , lists , stes .
+			   PERSISTENCE : Redis offers optionla data persistaence , allwoing data to  save in disk.
+			   .

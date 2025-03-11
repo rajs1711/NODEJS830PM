@@ -1,4 +1,5 @@
 const resturantModel = require('../model/resturantModel');
+const { setRedisDataByKey, getRedisDataByKey } = require('../middleware/redis');
 const createResturant = async (req, res) => {
 
     const {
@@ -30,7 +31,25 @@ const createResturant = async (req, res) => {
     })
 
 }
+const listAllResturants = async (req, res) => {
+    let resturants, resturants_list;
+    resturants_list = await getRedisDataByKey('resturantlist');
+    if (resturants_list) { // when data is in redis
+        console.log('comes from redis');
+        resturants = resturants_list
+    } else {
+        // when data not in redis
+        console.log('comes from database');
+        resturants = await resturantModel.find(); // mongodb call
+        await setRedisDataByKey('resturantlist', resturants) // set data in redis
+    }
 
+    res.status(200).send({
+        resturants,
+        success: true,
+        message: "Resturants listed successfully"
+    });
+}
 module.exports = {
-    createResturant
+    createResturant, listAllResturants
 }

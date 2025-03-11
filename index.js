@@ -20,7 +20,7 @@ const limiter = rateLimit({
     // store: ... , // Redis, Memcached, etc. See below.
 });
 
-app.use(limiter);
+//app.use(limiter);
 
 app.use(apiprefix, require("./routes/commonRoutes"));
 app.use(apiprefix, require("./routes/loginRoutes"));
