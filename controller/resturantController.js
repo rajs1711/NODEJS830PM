@@ -1,5 +1,5 @@
 const resturantModel = require('../model/resturantModel');
-const { setRedisDataByKey, getRedisDataByKey } = require('../middleware/redis');
+const { setRedisDataByKey, getRedisDataByKey, setCacheData } = require('../middleware/redis');
 const createResturant = async (req, res) => {
 
     const {
@@ -50,6 +50,18 @@ const listAllResturants = async (req, res) => {
         message: "Resturants listed successfully"
     });
 }
+const listAllResturantsV2 = async (req, res) => {
+
+    resturants = await resturantModel.find(); // mongodb call
+    await setCacheData(req, resturants) // set data in redis
+
+
+    res.status(200).send({
+        resturants,
+        success: true,
+        message: "Resturants listed successfully"
+    });
+}
 module.exports = {
-    createResturant, listAllResturants
+    createResturant, listAllResturants, listAllResturantsV2
 }

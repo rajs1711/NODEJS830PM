@@ -29,4 +29,11 @@ username ,oldpassword ,newpassword
        rating
    ]
 6.Create API to LIST ALL FOR particular resturn
-7. Create API to verify OTP of user and return token 
+7. Create API to verify OTP of user and return token
+8. REDIS FLUSH API ( It will clear all keys from REDIS )
+9. REDIS CLEAN BY KEY API  (It will clear the key from REDIS which is passed)
+10.Create a api to place order ( resturantid , userid ,useremail,usermobile,food_id,foodname,time,date,coupancode, status)
+11.API to return total order count and order history of customer.
+12.API to create coupan (coupanid,coupancode, expirydate,amount,resturantid,appliedamount ,isActive)
+13.List all active coupans
+

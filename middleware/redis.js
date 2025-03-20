@@ -36,8 +36,45 @@ const getRedisDataByKey = async (datakey) => {
     }
 }
 
+async function getCachedata(req, res, next) {
+    if (req?.headers?.resetcache === 'true') {
+        const key = req.url;
+        try {
+            await redisclient.del(key)
+        } catch (err) {
+            console.log(err)
+        }
+        return next();
+    }
+    const key = req.url;
+    let results;
+    try {
+        const cacheResults = await redisclient.get(key);
+        if (cacheResults) {
+            results = JSON.parse(cacheResults);
+        } else {
+            next()
+        }
+    } catch (err) {
+        res.status(404)
+    }
+}
+
+async function setCacheData(req, result) {
+    const key = req.url;
+    try {
+        await redisclient.set(key, JSON.stringify(result), {
+            EX: process.env.REDIS_EXPIRE
+        })
+    } catch (err) {
+        res.send(404);
+    }
+}
+
 module.exports = {
     setRedisDataByKey,
     getRedisDataByKey,
-    redisclient
+    redisclient,
+    setCacheData,
+    getCachedata
 }
