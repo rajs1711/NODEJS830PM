@@ -35,5 +35,17 @@ username ,oldpassword ,newpassword
 10.Create a api to place order ( resturantid , userid ,useremail,usermobile,food_id,foodname,time,date,coupancode, status)
 11.API to return total order count and order history of customer.
 12.API to create coupan (coupanid,coupancode, expirydate,amount,resturantid,appliedamount ,isActive)
-13.List all active coupans
+13.List all active coupans.
+14. Create a api which return PDF of order 
+    (here you pass order id , PDF) (puppeter,playwright)
+    pdf :
+     orderno: 89999
+     Time:10PM
+     Date:11/12/2025 
 
+     ITEM: Briyani 
+     quanity: 1
+     Total Price: 5000
+     payment:online
+
+     Thank you

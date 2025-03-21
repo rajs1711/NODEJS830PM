@@ -139,7 +139,53 @@ Example: of API Endpoints:
       500 => Internal server error 
       503 => service unavailable.
 
+==================================================
+EVENT LOOP= > Event Loop is an infinite loop which continously
+            check call stack and whenever the call stack is empty it fetch task from 
+            task queue or microtask queue (where microstaks queue has hight priority) and execute in call stack.
 
+Five Important function of array in javascript 
 
-    
-    
+1. filter (): creates a new array with elements that 
+             pass a specific condition , it runs for every element of array
+        example:
+
+        const numbers=[22,30,11,14,13];
+        const evennumbers=numbers.filter(num=>num % 2===0);
+        console.log(evennumbers) // a new array with even number
+
+2.map(): Transforms each element of an array using a provided
+        function and returns  a new array 
+
+        example:
+         
+         const numbers=[1,2,3,4]
+         const doubleNumber=numbers.map(num=>num*2);
+         console.log(doubleNumber); // return array 
+
+3.forEach(): It helps to run a loop over your array 
+
+const numbers=[8,4,5,5];
+numbers.forEach((num)=>{
+   console.log(num) // 8 ,4,5,5
+}) 
+
+4.reduce(): Applies a function against an accumulator and each element in the array to
+reduce it to a single value , here pre is previous data and current is current elemet of array.
+
+    const numbers=[8,4,5,5];
+    const result=numbers.reduce((pre,current)=>pre+current,10);
+    console.log(result) // 32
+    Note: here 10 is the first previous value
+
+5.concat(): Merges two or more arrays into a new array 
+   
+   const arr1=[78,99,99];
+   const arr2=[66,22,33,11];
+   const mered_array=arr1.concat(arr2);
+   console.log(mered_array);//[78,99,99,66,22,33,11]
+
+6.splice(): this helps to return array elemnt on the basis of index  with added element.
+
+const student=['raj','prince','khusi','akash','ayush'];
+student.splice(2,0,'Amit');
