@@ -1,0 +1,31 @@
+//React Installation command
+npm create vite@latest
+react
+javascript+swc
+cd project director
+npm install
+npm run dev
+
+===============================================
+src = >(source folder)
+this is the folder where we create subfloders and files for our application
+
+App.css => this file helps to write css for your application in class or id level 
+index.css => this file helps to write css for global configuration like element level on your application
+
+====================
+.jsx ( javascript extensions):
+
+JSX stands for javscript XML (extensible markup language). It is a sysntex extension for javascript 
+thet allows you to write HTML like code directly within JS.
+
+Example:
+const welcome_message=<h1>Hello i am jsx </h1> 
+
+Note: It helps to emebed variables of javascript with html .
+by using {}. This enable dynamic content rednering and logic in jsx .
+
+example:
+const name='raj';
+const element= <h1>Hello {name}</h1>
+   //output: Hello name
