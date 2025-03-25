@@ -29,3 +29,16 @@ example:
 const name='raj';
 const element= <h1>Hello {name}</h1>
    //output: Hello name
+
+=====================================================
+Component Creation and call 
+==================================
+Component:
+In React js Components are the building blocks that allow you to split the UI into 
+independent and reusable pices.
+  OR 
+A component in react js is a javascript function or class  that optionally
+accept s props and returns a react element  that describe 
+how a section of the UI should appear.
+
+Types: 1. Functional component 2. class component
