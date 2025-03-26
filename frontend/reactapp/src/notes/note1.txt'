@@ -42,3 +42,6 @@ accept s props and returns a react element  that describe
 how a section of the UI should appear.
 
 Types: 1. Functional component 2. class component
+
+https://flowbite.com/docs/components/buttons/
+https://tailwindcss.com/docs/table-layout

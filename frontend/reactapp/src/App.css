@@ -1,0 +1,12 @@
+@import "tailwindcss";
+.divStyle{
+    background-color: rgb(40, 17, 38);
+    color: aliceblue;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    padding: auto;
+}
+.layout{
+    border-radius: 5px;
+}
