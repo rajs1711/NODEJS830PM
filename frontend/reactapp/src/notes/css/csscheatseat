@@ -1,0 +1,103 @@
+Properties:
+width:
+height:
+
+color:red
+backgrournd-color:red;
+background-position:30px;
+backroudnd-attachment:fixed;
+background-size:cover;
+background-repeat:no-repeat;
+
+
+font-size:20px
+font-family:arial
+font-style:italic
+font-weight:bold
+font-variant:
+
+
+text-decoration:none
+text-align:center
+text-indent:30px
+text-transform:uppercase
+text-shadow
+
+list-style-type:none
+display:flex /inline/inline-blocl/block
+position:relative/absolute/static/fixed
+overflow:hidden/scroll/auto
+outline:
+border
+border-style:
+border-width:
+border-color:
+
+margin
+margin-bottom /left/right/top
+
+padding:
+padding-bottom/left/right/top
+box-sizing:border-box;
+
+border-radius:
+
+letter-spacing
+word-spacing
+line-height
+box-shadow
+opacity:
+visibility:hidden/visible
+
+jusitify-content:center/space-between
+align-items:center
+
+a:hover{
+	
+}
+input:focus{
+	
+}
+
+table tr:first-child{
+	
+}
+
+table tr:last-child{
+	
+}
+table tr:nth-child{
+	
+}
+
+div p{ //descendent
+	
+}
+
+div >p{  //child
+	
+}
+
+div+p{  / direct adjacent
+	
+}
+div ~ p{  / adjacent
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

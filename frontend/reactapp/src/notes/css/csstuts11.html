@@ -1,0 +1,149 @@
+<html>
+	<head>
+		<title>pseduo class</title>
+		<style>
+			table{
+				width: 200px;
+				height:50px;
+				border: 2px solid red;
+				border-collapse: collapse;
+			}
+			table tr td{
+				border: 2px solid red;
+			}
+			table tr th
+			{
+				border: 2px solid red;
+/*				background-color:cornflowerblue;
+				color: #fff;*/
+			}
+
+			table tr:first-child{
+				background-color:cornflowerblue;
+				color: #fff;
+
+			}
+
+			
+			table tr:nth-child(2n){
+				background-color:red;
+				color: #fff;
+			}
+             
+  
+
+
+			table tr:nth-child(even){
+				background-color:red;
+				color: #fff;
+			}
+			table tr:nth-child(odd){
+				background-color:black;
+				color: #fff;
+			}
+			table tr:nth-child(1){
+				background-color:cornflowerblue;
+				color: #fff;
+			}
+
+			table tr:last-child{
+				background-color:cornflowerblue;
+				color:#fff;
+			}
+
+
+			/*this is the case when we want css all over the table apart from table*/
+		/*	table tr:not(:first-child){
+             	background-color:red;
+				color: #fff;
+             }*/
+
+            input[type="text"],input[type="password"]{
+               background-color:red;
+               display:block;
+               margin-bottom: 10px;
+            }
+            input[type="submit"]{
+               background-color:blue;
+            }
+            ::placeholder{
+            	color: #fff;
+            }
+            .a ,.b{
+            	color: red;
+            }
+
+		</style>
+	</head>
+	<body>
+
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>phone</th>
+			</tr>
+			<tr>
+				<td>Saurav</td>
+				<td>8210202331</td>
+			</tr>
+			<tr>
+				<td>Amit</td>
+				<td>7979049818</td>
+			</tr>
+			<tr>
+				<td>Saurav</td>
+				<td>8210202331</td>
+			</tr>
+			<tr>
+				<td>Amit</td>
+				<td>7979049818</td>
+			</tr>
+			<tr>
+				<td>Saurav</td>
+				<td>8210202331</td>
+			</tr>
+			<tr>
+				<td>Amit</td>
+				<td>7979049818</td>
+			</tr>
+						<tr>
+				<td>Saurav</td>
+				<td>8210202331</td>
+			</tr>
+			<tr>
+				<td>Amit</td>
+				<td>7979049818</td>
+			</tr>
+						<tr>
+				<td>Saurav</td>
+				<td>8210202331</td>
+			</tr>
+			<tr>
+				<td>Amit</td>
+				<td>7979049818</td>
+			</tr>
+						<tr>
+				<td>Saurav</td>
+				<td>8210202331</td>
+			</tr>
+			<tr>
+				<td>Amit</td>
+				<td>7979049818</td>
+			</tr>
+		</table>
+
+
+		<input type="text" placeholder="Ebter Username">
+
+		<input type="text" placeholder="Ebter Username">
+		<input type="password" placeholder="Ebter Username">
+
+		<input type="submit">
+
+		<p class="a">Hello</p>
+		<p class="b">Hello</p>
+
+
+		
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<title>Animation/ transition/transform</title>
+		<style>
+			.mydiv{
+				background-color:red;
+				color:#fff;
+				width: 100px;
+				height:100px;
+				position:relative;
+				animation-name:cubemovement;
+				animation-duration:5s;
+				animation-timing-function:linear;
+				animation-delay:1s;
+				animation-fill-mode:forwards;
+				animation-iteration-count: infinite;
+				animation-direction:alternate /*alternate-reverse ,reverse*/;
+			}
+
+
+            @keyframes cubemovement{
+
+            	0%{
+                 left: 0px;
+                 top: 0px;
+                 background-color:red;
+            	}
+            	25%{
+            	 left: 900px;
+                 top: 0px;
+                 background-color:green;
+
+            	}
+            	50%{
+            	 left: 900px;
+                 top: 600px;
+                 background-color:pink;
+            	}
+            	75%{
+            	 left: 0px;
+                 top: 600px;
+                 background-color:blue;
+
+            	}
+            	100%{
+            	 left: 0px;
+                 top: 0px;
+                 background-color:yellow;
+
+            	}
+
+                  
+
+
+            }
+
+
+
+
+
+
+
+
+			
+		</style>
+	</head>
+	<body> 
+
+		  <div class="mydiv">
+		  	
+		  </div>
+		
+	</body>
+</html>

@@ -1,0 +1,63 @@
+body{
+ background-image: linear-gradient(45deg,#4073d0,#aae8d1);
+}
+.loginbox{
+border-radius: 10px;
+width: 395px;
+height: 450px;
+/* background-image: linear-gradient(45deg, #ffe6e617, #fffffe); */
+background: #fffdfd;
+margin-left: 487px;
+margin-top: 74px;
+padding: 30px;
+box-sizing: border-box;
+}
+.login{
+	text-align: center;
+	color: #3ca0da;
+	font-size: 30px;
+	font-weight: bold;
+}
+.childdiv{
+	margin-left: 45px;
+	/* background-image: linear-gradient(45deg, #ef6868, transparent); */
+}
+.inputbox{
+	/* background: #fff; */
+	/* color: red; */
+	width: 255px;
+	height: 33px;
+	/* border: 2px solid red; */
+	border: none;
+	border-bottom: 2px solid black;
+	background: transparent;
+	/* border: none; */
+}
+.btn{
+	margin-top: 20px;
+	width: 259px;
+	/* border: none; */
+	border-style: hidden;
+	color: #fff;
+	height: 35px;
+	font-size: 17px;
+	background-image: linear-gradient(227deg, #595dec,#41ffff);
+}
+
+.linkpara{
+	text-align: center;
+}
+.links{
+	color: #64a1c5;
+}
+.socialiconbox{
+	text-align: center;
+	margin-left: -8px;
+}
+.socialicon{
+	width: 35px;
+	height: 16px;
+	padding: 8px 2px;
+	background: #00c4ff;
+	color: #fff;
+}

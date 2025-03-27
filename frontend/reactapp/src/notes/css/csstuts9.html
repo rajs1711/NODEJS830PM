@@ -1,0 +1,76 @@
+<html> 
+  <head>
+    <title>Flex with different child width</title>	
+    <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+      box-sizing:border-box;
+    }
+    .parent{
+      width: 100%;
+      height: 300px;
+      border: 2px solid black;
+      display:flex;
+      justify-content:center /*space-evenly space-around space-between*/;
+      /*flex-direction:column/*row row-reverse column-reverse*/;
+      /*align-items:center;*/
+
+    }
+
+    .child1{
+      width:30%;
+      height: 300px;
+      border: 2px solid red;
+      background-color:orange;
+      opacity:0.5;
+      order:2;
+    }
+    .child2{
+      width:30%;
+      height: 300px;
+      border: 2px solid red;
+      background-color:green;
+      order:1;
+      opacity:0.7;
+    }
+    .child3{
+      width:30%;
+      height: 300px;
+      border: 2px solid red;
+      background-color:blue;
+      order: -1;
+      opacity:0.6;
+    }
+
+    .child1:hover,.child2:hover,.child3:hover{
+      opacity:1;
+    }
+
+
+
+    </style>
+  </head>
+  <body>
+
+    <div class="parent">
+      <div class="child1" >
+         <h1>column1</h1>
+      </div>
+      <div class="child2" >
+         <h1>column2</h1>
+      </div>
+      <div class="child3" >
+        <h1>column3</h1>
+      </div>
+    </div>
+
+
+
+
+
+
+
+  	
+  </body>
+</html>

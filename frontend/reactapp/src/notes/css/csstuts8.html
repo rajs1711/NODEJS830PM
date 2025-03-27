@@ -1,0 +1,80 @@
+<html> 
+  <head>
+    <title>Flex with different child width</title>	
+    <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+      box-sizing:border-box;
+    }
+    .parent{
+      width: 100%;
+      height: 300px;
+      border: 2px solid black;
+      display:flex;
+    }
+
+    .child1{
+      width:30%;
+      height: 300px;
+      border: 2px solid red;
+      background-color:red;
+    }
+    .child2{
+      width:40%;
+      height: 300px;
+      border: 2px solid red;
+      background-color:green;
+    }
+    .child3{
+      width:30%;
+      height: 300px;
+      border: 2px solid red;
+      background-color:red;
+    }
+
+    .child4{
+      width:60%;
+      height: 300px;
+      border: 2px solid red;
+      background-color:green;
+    }
+    .child5{
+      width:40%;
+      height: 300px;
+      border: 2px solid red;
+      background-color:red;
+    }
+
+
+    </style>
+  </head>
+  <body>
+
+    <div class="parent">
+      <div class="child1" >
+         <h1>column1</h1>
+      </div>
+      <div class="child2" >
+         <h1>column2</h1>
+      </div>
+      <div class="child3" >
+        <h1>column3</h1>
+      </div>
+    </div>
+     <br>
+     <div class="parent">
+
+      <div class="child4" >
+         <h1>column1</h1>
+      </div>
+      <div class="child5" >
+        <h1>column2</h1>
+      </div>
+    </div>
+
+
+
+  	
+  </body>
+</html>

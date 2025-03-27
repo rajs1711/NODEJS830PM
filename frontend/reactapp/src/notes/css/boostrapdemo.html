@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+      <style>
+
+        .navbarbg{
+          background-color:yellow !important;
+        }
+        .modalbg{
+          background-color:red;
+          color: #fff;
+        }
+        .mycontent{
+          text-align: center;
+    padding: 76px;
+        }
+
+        @media(min-width:1200px){
+          .mycontainer{
+             padding:10px 0px 0px 0px;
+          }
+        .myheader{
+          background-color:black;
+          color: #fff;
+           }
+        }
+        @media(max-width:550px){
+         .mycontainer{
+           padding:15px 0px 0px 0px;
+         }
+          .myheader{
+          background-image:linear-gradient(to right, red,orange);
+          color: #fff;
+          }
+        }
+      </style>
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+
+
+      <div class="container-fluid myheader">
+          <div class="container mycontainer">
+            <div class="row">
+              <div class="col-md-12">
+                <p><span class="fa fa-clock"> 9am to 9pm</span>&nbsp &nbsp<span class="fa fa-phone">8210202331</span></p>
+              </div>
+             </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <nav class="navbar navbar-expand-lg navbar-light bg-light navbarbg">
+                    <div class="container-fluid">
+                      <a class="navbar-brand" href="#">Navbar</a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                          </li>
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Dropdown
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item" href="#">Action</a></li>
+                              <li><a class="dropdown-item" href="#">Another action</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                          </li>
+                   
+                        </ul>
+                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Signup</button>
+                      </div>
+                    </div>
+                  </nav>
+
+                  
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 mycontent">
+                         <h1>Free <span style="color:#fbff00;">E-learning</span><span style="color:#b2f7b2;"> Platform</span> for Students</h1>
+                         <h2>Give and take Relationship in Education</h2>
+                         <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                         consequat.</p>
+                         <p class="callus">Call Us: <span>1800-419-0313</span></p>
+                         <button type="button" class="btn btn-info">SignUp</button>
+              </div>
+            </div>
+          </div>
+  
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modalbg">
+        <h5 class="modal-title" id="staticBackdropLabel">signup</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body ">
+       
+
+          <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="modal-footer modalbg">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+   
+  </body>
+</html>

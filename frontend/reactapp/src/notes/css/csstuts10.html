@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>combinators</title>
+		<style>
+			/* combinators  */
+			/* descendet selector */ 
+            .mydiv p{
+            	color: red;
+            }
+            /*child selector*/
+            .mydiv > p{
+            	color: red;
+            }
+            /*direct adjacent*/
+           /* .mydiv + p{
+            	color: green;
+            }
+            /* adjacent */
+            .mydiv ~ p{
+            	color: blue;
+            }*/
+
+            .mydiv + p ~p{
+            	color: yellow;
+            }
+            .mydiv > section >p{
+            	color: pink;
+            }
+		</style>
+	</head>
+	<body>
+
+		<div class="mydiv">
+			<p>First</p>
+			<p>Second</p>
+			<section>
+				<p>Third</p>
+			</section>
+			<p>Fourth</p>
+		</div>
+		<p>Fifth</p>
+		<p>Six</p>
+	</body>
+</html>
