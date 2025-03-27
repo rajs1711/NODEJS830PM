@@ -45,3 +45,21 @@ Types: 1. Functional component 2. class component
 
 https://flowbite.com/docs/components/buttons/
 https://tailwindcss.com/docs/table-layout
+
+
+======================================
+Props: Props is a property of component which can be passed from one
+component to another component.
+It is a away to transfer data from one component to another component. 
+
+We can pass props from parent component to child component. 
+Note: To recive data from child to parent component we can use the concept function props .
+
+1. parent component:  Parent component is a component where the 
+another component render .
+2. Child component: Let say we have product component (product.jsx)  and we want to render this
+product into component home.jsx  so in that case . 
+product is child component .
+
+Note: with the help of props we can trasnfer data like :
+     variable ,object ,functions ,arrays,string,state
