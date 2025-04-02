@@ -1,6 +1,7 @@
 import React from 'react'
 //import Product from './Product'
-import Productlist from './Productlist'
+//import Productlist from './Productlist'
+import Form from './Form'
 function App(){
     const ProductList=[
     {id:1,name:'HP Laptop',sellingPrice:'83993' ,cateogry:'SmartLaptop',description:'Best laptop of this Cateogry , which runs very fast'},
@@ -12,7 +13,8 @@ function App(){
     return(
         <>
           {/*<Product name="Mac Book" sellingPrice="10000" cateogry="Smart Phone" description="Best Mobile Phone Of This Cteogry, Smart Phone with Speed and network capability"/>*/}
-        <Productlist pageHeader='Smart Phone' products={ProductList}/>
+        {/*<Productlist pageHeader='Smart Phone' products={ProductList}/>*/}
+        <Form/>
         </>
     )
 }

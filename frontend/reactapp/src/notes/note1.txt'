@@ -63,3 +63,12 @@ product is child component .
 
 Note: with the help of props we can trasnfer data like :
      variable ,object ,functions ,arrays,string,state
+
+EVENTS:
+Events is react is similar to javascript but with some minor change.
+For example:
+commonly used events :
+1. Form Event: onChange , onSubmit
+2. Keyboard Event:onKeyUp,onKeyDown,onKeyPress 
+3. Focus Event : onFocus , onBlur 
+4. button: onClick ,onDoubleClick
