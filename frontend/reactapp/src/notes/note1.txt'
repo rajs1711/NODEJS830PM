@@ -72,3 +72,16 @@ commonly used events :
 2. Keyboard Event:onKeyUp,onKeyDown,onKeyPress 
 3. Focus Event : onFocus , onBlur 
 4. button: onClick ,onDoubleClick
+
+
+Hooks:
+Hooks in React js are a way to use state and other react feature in Functional
+components. Introduced in react 16.8 version .
+
+there are several types of hooks 
+for example:
+useState, use Effect,useContext,useMemo ....
+
+useState: This hook helps to make our vriable in react mutable . In
+react by default the variables are immutable but by using the concept 
+of hook(useState) we make our variable immutable means we can change the value of variable.
