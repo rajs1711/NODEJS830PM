@@ -1,10 +1,18 @@
 import React from "react";
 
 function Productlist({pageHeader,products}){
-    return(
+    console.log(products);
+     const filterData=products.filter((product)=>(product.cateogry==='IOS Machine'))
+     console.log(filterData);
+     return(
         <>
+       
         <h1>Page : {pageHeader}</h1>
-         { products.map((data)=>(
+        <select name="filterdata" id="filterdata">
+            <option value="Window Machine">Window Machine</option>
+            <option value="IOS Machine">Mac Machine</option>
+        </select>
+         { filterData.map((data)=>(
 
         <div key={data.id}>
         <a href="#" className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
