@@ -1,17 +1,21 @@
-import React from "react";
+import React ,{useState} from "react";
 
 function Productlist({pageHeader,products}){
-    console.log(products);
-     const filterData=products.filter((product)=>(product.cateogry==='IOS Machine'))
+     const [filterkey,setFilterKey]=useState('Window Machine');
+     const filterData=products.filter((product)=>(product.cateogry===filterkey))
      console.log(filterData);
      return(
         <>
        
         <h1>Page : {pageHeader}</h1>
-        <select name="filterdata" id="filterdata">
+        <br></br>
+        <label id="filterlabel">Filter : </label>
+        <select value={filterkey} onChange={(e)=>setFilterKey(e.target.value)} name="filterdata" id="filterdata" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <option value="">Select Filter</option>
             <option value="Window Machine">Window Machine</option>
             <option value="IOS Machine">Mac Machine</option>
         </select>
+        <br></br>
          { filterData.map((data)=>(
 
         <div key={data.id}>
