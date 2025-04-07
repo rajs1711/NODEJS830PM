@@ -5,9 +5,13 @@ const dotenv = require("dotenv");
 const { globalErrors } = require('./helpers/errorHandlers');
 const connectdb = require('./config/db');
 const rateLimit = require('express-rate-limit');
+const cors = require('cors');
 
 dotenv.config();
 app.use(express.json());
+
+app.use(cors());
+
 //database connection
 connectdb();
 const apiprefix = process.env.APIPREFIX;

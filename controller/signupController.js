@@ -8,14 +8,14 @@ const routepath = 'controller/signupController';
 const signupController = async (req, res) => {
     logger.log({ level: 'info', label: routepath, message: 'signup function execution start' });
     try {
-        const { name, email, password } = req.body
+        const { name, email, mobile } = req.body
 
         const user = await signupModel.find({
             email: email
         });
 
         if (user.length > 0) {
-            console.log('jjj');
+
             const data = [
                 {
                     "msg": "Email/username should be unique"
@@ -25,9 +25,11 @@ const signupController = async (req, res) => {
         }
 
         //logic to encyrpt your password 
+        const rand_num = Math.floor(1000 + Math.random() * 9000);
+        const password = `${rand_num}@Pwd`;
         const encrypted_password = await bcrypt.hash(password, 10); // 10 is salt 
         const newSignup = new signupModel({
-            name, email, password: encrypted_password
+            name, email, mobile, password: encrypted_password
         });
 
         await newSignup.save();
