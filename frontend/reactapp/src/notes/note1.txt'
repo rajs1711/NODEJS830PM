@@ -85,3 +85,8 @@ useState, use Effect,useContext,useMemo ....
 useState: This hook helps to make our vriable in react mutable . In
 react by default the variables are immutable but by using the concept 
 of hook(useState) we make our variable immutable means we can change the value of variable.
+
+
+useEffect: The useEffect hook in React is used to perform side effects,
+   such as fetching data from an API , setting timers or updating data in DOM.
+   This hook runs automatically whenever your page load.

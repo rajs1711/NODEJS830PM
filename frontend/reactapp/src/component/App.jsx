@@ -3,7 +3,8 @@ import React from 'react'
 //import Productlist from './Productlist'
 //import Form from './Form'
 //import LearnHook from './LearnHook'
-import SignupForm from './SignupForm'
+//import SignupForm from './SignupForm'
+import ResturantList from './ResturantList'
 function App(){
     const ProductList=[
     {id:1,name:'HP Laptop',sellingPrice:'83993' ,cateogry:'Window Machine',description:'Best laptop of this Cateogry , which runs very fast'},
@@ -18,7 +19,8 @@ function App(){
         {/*<Productlist pageHeader='Smart Phone' products={ProductList}/>*/}
         {/*<Form/>*/}
         {/*<LearnHook/>*/}
-        <SignupForm/>
+        {/*<SignupForm/>*/}
+        <ResturantList/>
         </>
     )
 }
