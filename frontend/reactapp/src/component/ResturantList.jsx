@@ -60,7 +60,34 @@ const ResturantList=()=>{
                             {data.openTime}-{data.closeTime}
                         </td>
                         <td className="px-6 py-4">
+
+                        {data.rating==3 && 
+                          <div><i className="fa fa-star" aria-hidden="true"></i>
                           <i className="fa fa-star" aria-hidden="true"></i>
+                          <i className="fa fa-star" aria-hidden="true"></i></div>
+                         }
+                         {data.rating==4 && 
+                          <div><i className="fa fa-star" aria-hidden="true"></i>
+                          <i className="fa fa-star" aria-hidden="true"></i>
+                          <i className="fa fa-star" aria-hidden="true"></i>
+                          <i className="fa fa-star" aria-hidden="true"></i>
+                          </div>
+                         }
+                         {data.rating==5 && 
+                          <div><i className="fa fa-star" aria-hidden="true"></i>
+                          <i className="fa fa-star" aria-hidden="true"></i>
+                          <i className="fa fa-star" aria-hidden="true"></i>
+                          <i className="fa fa-star" aria-hidden="true"></i>
+                          </div>
+                         }
+                          {data.rating==5 && 
+                          <div><i className="fa fa-star" aria-hidden="true"></i>
+                          <i className="fa fa-star" aria-hidden="true"></i>
+                          <i className="fa fa-star" aria-hidden="true"></i>
+                          <i className="fa fa-star" aria-hidden="true"></i>
+                          <i className="fa fa-star" aria-hidden="true"></i>
+                          </div>
+                         }
                         </td>
                         <td className="px-6 py-4 bg-gray-50 dark:bg-gray-800">
                             <ol>

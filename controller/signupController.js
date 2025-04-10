@@ -33,8 +33,11 @@ const signupController = async (req, res) => {
         });
 
         await newSignup.save();
-
-        return handleResponse(res, statusCode.OK, newSignup);
+        const data = [
+            { 'newsignup': newSignup },
+            { 'password': password }
+        ]
+        return handleResponse(res, statusCode.OK, data);
 
     } catch (error) {
         console.log(error);
