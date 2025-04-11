@@ -90,3 +90,6 @@ of hook(useState) we make our variable immutable means we can change the value o
 useEffect: The useEffect hook in React is used to perform side effects,
    such as fetching data from an API , setting timers or updating data in DOM.
    This hook runs automatically whenever your page load.
+
+react routing 
+npm install react-router-dom

@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import axios from 'axios';
+import Navbar from './Navbar';
 function Login(){
    
     const [formData,setFormdata]=useState({
@@ -37,7 +38,7 @@ function Login(){
                     const mytoken =response.data.data[0].token;
                     localStorage.setItem('logintoken',mytoken);
                     //code to redner next window
-                    // viewprofile
+                    //dashboard
                 }
                 setResponseMessage('Login Successfully ');
                 
@@ -52,6 +53,7 @@ function Login(){
 
     return(
         <>
+        <Navbar/>
         <div className="formbg rounded-md border bg-white">
         {
             responseMessage &&(

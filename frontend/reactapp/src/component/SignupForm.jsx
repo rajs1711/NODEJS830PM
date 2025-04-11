@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import axios from 'axios';
+import Navbar from './Navbar';
 function SignupForm(){
    
     const [formData,setFormdata]=useState({
@@ -46,6 +47,7 @@ function SignupForm(){
 
     return(
         <>
+        <Navbar/>
         <div className="formbg rounded-md border bg-white">
         {
             responseMessage &&(
