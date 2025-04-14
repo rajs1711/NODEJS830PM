@@ -4,6 +4,7 @@ import Home from './Home'
 import Dashboard from './Dashboard'
 import Login from './Login'
 import SignupForm from './SignupForm'
+import ProtectedRoutes from './ProtectedRoutes'
 //import Product from './Product'
 //import Productlist from './Productlist'
 //import Form from './Form'
@@ -25,7 +26,9 @@ function App(){
         <Route path="/" exact element={<Home/>}/>
         <Route path="/login" exact element={<Login/>}/>
         <Route path="/signup" exact element={<SignupForm/>}/>
-        <Route path="/dashboard" exact element={<Dashboard/>}/>
+        <Route element={<ProtectedRoutes/>}>
+           <Route path="/dashboard"  element={<Dashboard/>}/>
+        </Route>
       </Routes>
       </Router>
       /*

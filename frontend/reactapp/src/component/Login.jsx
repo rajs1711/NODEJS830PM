@@ -1,8 +1,9 @@
 import React,{useState} from 'react';
 import axios from 'axios';
 import Navbar from './Navbar';
+import { useNavigate } from 'react-router-dom';
 function Login(){
-   
+     const navigate = useNavigate();
     const [formData,setFormdata]=useState({
         username:'',
         password:''
@@ -26,7 +27,8 @@ function Login(){
             // axios helps to hit api npm install axios
             const API_ENDPOINT='http://localhost:5000/api/v1/login';
             const response= await axios.post(API_ENDPOINT,formData);
-            if(response.status=='201'){
+     
+            if(response.status=='200'){
                 //now blank input fields
                 setFormdata({
                     username:'',
@@ -35,12 +37,20 @@ function Login(){
                 // store token in local storage
                
                 if(response.data.data.length > 0){
+                    if(response.data.data[0].status==200){
                     const mytoken =response.data.data[0].token;
                     localStorage.setItem('logintoken',mytoken);
                     //code to redner next window
-                    //dashboard
+                     navigate('/dashboard');
+                    }else{
+                        const msg =response.data.data[0].msg;
+                        setResponseMessage(msg);
+                    }
+
+                }else{
+                  setResponseMessage('Error,Try Again ');
                 }
-                setResponseMessage('Login Successfully ');
+                
                 
             }else{
                setResponseMessage('Server Error,Try Again');

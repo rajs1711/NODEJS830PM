@@ -30,20 +30,22 @@ const loginController = async (req, res) => {
                 const token = jwt.sign({ data }, process.env.JWT_SECRETKEY, { expiresIn: '2h' });
                 const response = [
                     {
+                        "status": 200,
                         "msg": "Login Sucessfuly",
                         "token": token
                     }
                 ]
                 logger.log({ level: 'info', label: routepath, message: 'sucessfully send response' });
-                return handleResponse(res, statusCode.OK, response);
+                return handleResponse(res, 200, response);
             } else {
                 logger.log({ level: 'Error', label: routepath, message: 'Wrong Password' });
                 const data = [
                     {
-                        "msg": "Wrong Password"
+                        "status": 401,
+                        "msg": "Wrong Passwords"
                     }
                 ]
-                return handleResponse(res, statusCode.NOT_FOUND, data);
+                return handleResponse(res, 200, data);
             }
 
 
@@ -51,10 +53,11 @@ const loginController = async (req, res) => {
             logger.log({ level: 'Error', label: routepath, message: 'Wrong username' });
             const data = [
                 {
+                    "status": 401,
                     "msg": "wrong username"
                 }
             ]
-            return handleResponse(res, statusCode.NOT_FOUND, data);
+            return handleResponse(res, 200, data);
         }
 
 
