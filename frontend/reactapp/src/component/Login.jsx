@@ -63,7 +63,70 @@ function Login(){
 
     return(
         <>
-        <Navbar/>
+            <div className="headersection">
+                <div className="logosection">
+                    <p><span className="fa fa-star"></span>Food-Cart</p>
+                </div>
+                <Navbar/>
+                <div className="loginsection">
+                <div className="loginbox">
+                <p className="login">Login</p>
+                    {
+                        responseMessage &&(
+                            <p style={{color:'red'}}>{responseMessage}</p>
+                        )
+                    }
+                <div className="childdiv">
+                    <form onSubmit={handleSubmit}>
+                    <input 
+                    type="email" 
+                    name="username" 
+                    id="username" 
+                    value={formData.email} 
+                    onChange={handleChange} 
+                    placeholder="Enter Email" 
+                    required 
+                    className="inputbox"/>
+                    <br/><br/>
+                    <input 
+                    type="password" 
+                    name="pwd" 
+                    id="pwd" 
+                    value={formData.password}
+                    onChange={handleChange} 
+                    placeholder="Enter password" 
+                    required 
+                    className="inputbox"/>
+                    <br/><br/>
+                    <input type="submit" name="loginbtn" value="SignIn" className="btn"/>
+                </form>
+                    <div className="linksdiv">
+                    <p className="linkspara"><a href="#" className="links">forgot password ?</a></p>
+                    <p className="linkspara"><a href="" className="links">create new account</a></p>
+                    </div>
+
+
+                    <p className="socialiconbox">
+                        <span className="fa fa-facebook socialicon"></span>
+                        <span className="fa fa-twitter socialicon"></span>
+                        <span className="fa fa-instagram socialicon"></span>
+                        <span className="fa fa-youtube-play socialicon"></span>
+                    </p>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+        {/* <Navbar/>
         <div className="formbg rounded-md border bg-white">
         {
             responseMessage &&(
@@ -100,7 +163,7 @@ function Login(){
 
         </div>
         </form>
-        </div>
+        </div> */}
         </>
     )
 

@@ -47,7 +47,70 @@ function SignupForm(){
 
     return(
         <>
-        <Navbar/>
+                    <div className="headersection">
+                <div className="logosection">
+                    <p><span className="fa fa-star"></span>Food-Cart</p>
+                </div>
+                <Navbar/>
+                <div className="loginsection">
+                <div className="loginbox">
+                <p className="login">SignUp</p>
+                {
+                    responseMessage &&(
+                        <p style={{color:'red'}}>{responseMessage}</p>
+                    )
+                }
+                <div className="childdiv">
+                    <form onSubmit={handleSubmit}>
+                    <input 
+                    type="text" 
+                    id="name" 
+                    name="name"  
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Enter Your Name" 
+                    required 
+                    className="inputbox"/>
+                    <br/><br/>
+                    <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    value={formData.email} 
+                    onChange={handleChange} 
+                    placeholder="Enter Your Email" 
+                    required 
+                    className="inputbox"/>
+                    <br/><br/>
+                    <input 
+                    type="number" 
+                    id="mobile" 
+                    name="mobile" 
+                    value={formData.mobile}
+                    onChange={handleChange} 
+                    placeholder="Enter Your Mobile Number" 
+                    required 
+                    className="inputbox"/>
+                    <br/><br/>
+                    <input type="submit" name="signupbtn" value="SignIn" className="btn"/>
+                </form>
+                    <div className="linksdiv">
+                    <p className="linkspara"><a href="#" className="links">forgot password ?</a></p>
+                    <p className="linkspara"><a href="" className="links">create new account</a></p>
+                    </div>
+
+
+                    <p className="socialiconbox">
+                        <span className="fa fa-facebook socialicon"></span>
+                        <span className="fa fa-twitter socialicon"></span>
+                        <span className="fa fa-instagram socialicon"></span>
+                        <span className="fa fa-youtube-play socialicon"></span>
+                    </p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        {/* <Navbar/>
         <div className="formbg rounded-md border bg-white">
         {
             responseMessage &&(
@@ -70,7 +133,8 @@ function SignupForm(){
         </div>
         <div className="mb-5">
             <label htmlFor="Email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Email</label>
-            <input type="email" 
+            <input 
+            type="email" 
             id="email" 
             name="email"
             value={formData.email} 
@@ -79,7 +143,8 @@ function SignupForm(){
         </div>
         <div className="mb-5">
             <label htmlFor="mobile" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Mobile</label>
-            <input type="number" 
+            <input 
+            type="number" 
             id="mobile" 
             name="mobile" 
             value={formData.mobile}
@@ -93,7 +158,7 @@ function SignupForm(){
 
         </div>
         </form>
-        </div>
+        </div> */}
         </>
     )
 
