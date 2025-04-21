@@ -90,8 +90,8 @@ function Login(){
                     <br/><br/>
                     <input 
                     type="password" 
-                    name="pwd" 
-                    id="pwd" 
+                    name="password" 
+                    id="password" 
                     value={formData.password}
                     onChange={handleChange} 
                     placeholder="Enter password" 

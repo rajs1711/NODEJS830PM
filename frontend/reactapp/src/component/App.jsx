@@ -2,6 +2,7 @@ import React from 'react'
 import{BrowserRouter as Router ,Routes, Route }from 'react-router-dom'
 import Home from './Home'
 import Dashboard from './Dashboard'
+import Profile from './Profile'
 import Login from './Login'
 import SignupForm from './SignupForm'
 import ProtectedRoutes from './ProtectedRoutes'
@@ -28,6 +29,7 @@ function App(){
         <Route path="/signup" exact element={<SignupForm/>}/>
         <Route element={<ProtectedRoutes/>}>
            <Route path="/dashboard"  element={<Dashboard/>}/>
+           <Route path="/profile"  element={<Profile/>}/>
         </Route>
       </Routes>
       </Router>
