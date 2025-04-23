@@ -540,6 +540,11 @@ ul li a:hover::after{
 	animation-duration:0.2s;
 	animation-timing-function:linear;
 }
+.editicon{
+	color: #fd790c;
+    font-weight: bold;
+    font-size: 15px;
+}
 
 /*ul li a:hover::before{
 	content: "";

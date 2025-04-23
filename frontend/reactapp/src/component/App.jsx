@@ -3,6 +3,9 @@ import{BrowserRouter as Router ,Routes, Route }from 'react-router-dom'
 import Home from './Home'
 import Dashboard from './Dashboard'
 import Profile from './Profile'
+import Orderlist from '../pages/OrderList'
+import CreateOrder from '../pages/CreateOrder'
+
 import Login from './Login'
 import SignupForm from './SignupForm'
 import ProtectedRoutes from './ProtectedRoutes'
@@ -30,6 +33,8 @@ function App(){
         <Route element={<ProtectedRoutes/>}>
            <Route path="/dashboard"  element={<Dashboard/>}/>
            <Route path="/profile"  element={<Profile/>}/>
+           <Route path="/orderlist"  element={<Orderlist/>}/>
+           <Route path="/createorder"  element={<CreateOrder/>}/>
         </Route>
       </Routes>
       </Router>
