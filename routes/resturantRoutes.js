@@ -4,7 +4,7 @@ const { authenticateJWT } = require('../middleware/authentication');
 const { createResturant, listAllResturants } = require('../controller/ResturantController')
 const uploadHandler = require('../middleware/uploadcloudinary');
 //import fileupload middleware 
-
+const { createFood, listAllFoodsForResturant } = require('../controller/foodController');
 const upload = require('../middleware/fileupload');
 // Define our Routes authenticateJWT
 router.post("/createresturant", createResturant);
@@ -30,7 +30,10 @@ router.post("/uploaddocs", upload.fields([
 ]), (req, res) => {
     res.json({ message: 'File upload successfully' })
 });
-
+//authenticateJWT
+router.post("/createfood", createFood);
+// router.get("/listallfoods/:resturantid", listAllFoodsForResturant);
+router.get("/listallfoods", listAllFoodsForResturant);
 
 
 module.exports = router;
