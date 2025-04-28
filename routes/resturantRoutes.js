@@ -2,6 +2,11 @@ const express = require("express")
 const router = express.Router();
 const { authenticateJWT } = require('../middleware/authentication');
 const { createResturant, listAllResturants } = require('../controller/ResturantController')
+const { placeorder, getallorders } = require('../controller/placeOrderController');
+
+
+
+
 const uploadHandler = require('../middleware/uploadcloudinary');
 //import fileupload middleware 
 const { createFood, listAllFoodsForResturant } = require('../controller/foodController');
@@ -34,6 +39,6 @@ router.post("/uploaddocs", upload.fields([
 router.post("/createfood", createFood);
 // router.get("/listallfoods/:resturantid", listAllFoodsForResturant);
 router.get("/listallfoods", listAllFoodsForResturant);
-
-
+router.post("/orderfood", placeorder);
+router.get("/getallorders", getallorders);
 module.exports = router;

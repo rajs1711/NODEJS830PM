@@ -9,14 +9,15 @@ const createFood = async (req, res) => {
         category,
         rating
     } = req.body;
-
+    let code = name.toLowerCase().replace(/\s+/g, '');
     const newFood = new foodModel({
         resturantid,
         name,
         imageurl,
         price,
         category,
-        rating
+        rating,
+        code
     });
 
     const result = await newFood.save();
@@ -30,8 +31,6 @@ const createFood = async (req, res) => {
 
 
 const listAllFoodsForResturant = async (req, res) => {
-    //const { resturantid } = req.params;
-    //const foods = await foodModel.find({ resturantid });
     const foods = await foodModel.find();
     res.status(200).send({
         foods,

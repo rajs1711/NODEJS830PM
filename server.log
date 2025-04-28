@@ -35,3 +35,11 @@
 2025-04-07 15:30:52 INFO [controller/signupController] :signup function execution start 
 2025-04-07 15:39:21 INFO [controller/signupController] :signup function execution start 
 2025-04-07 15:40:23 INFO [controller/signupController] :signup function execution start 
+2025-04-25 15:04:40 ERROR [controller/loginController] :Login function execution start 
+2025-04-25 15:04:40 INFO [controller/loginController] :Username Found 
+2025-04-25 15:04:41 INFO [controller/loginController] :valid password 
+2025-04-25 15:04:41 INFO [controller/loginController] :sucessfully send response 
+2025-04-25 15:24:15 ERROR [controller/loginController] :Login function execution start 
+2025-04-25 15:24:15 INFO [controller/loginController] :Username Found 
+2025-04-25 15:24:15 INFO [controller/loginController] :valid password 
+2025-04-25 15:24:15 INFO [controller/loginController] :sucessfully send response 

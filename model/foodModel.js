@@ -2,8 +2,6 @@ const mongoose = require("mongoose");
 
 const foodSchema = new mongoose.Schema({
     resturantid: {
-        //type: mongoose.Schema.Types.ObjectId,
-        //ref: 'Resturant',
         type: String,
         required: true
     },
@@ -26,6 +24,10 @@ const foodSchema = new mongoose.Schema({
         default: 1,
         min: 1,
         max: 5
+    },
+    code: {
+        type: String,
+        required: true
     }
 }, { timestamps: true });
 
