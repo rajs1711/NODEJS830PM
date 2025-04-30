@@ -5,7 +5,7 @@ import Dashboard from './Dashboard'
 import Profile from './Profile'
 import Orderlist from '../pages/OrderList'
 import CreateOrder from '../pages/CreateOrder'
-
+import EditOrder from '../pages/EditOrder'
 import Login from './Login'
 import SignupForm from './SignupForm'
 import ProtectedRoutes from './ProtectedRoutes'
@@ -35,6 +35,7 @@ function App(){
            <Route path="/profile"  element={<Profile/>}/>
            <Route path="/orderlist"  element={<Orderlist/>}/>
            <Route path="/createorder"  element={<CreateOrder/>}/>
+           <Route path="/editorder/:id"  element={<EditOrder/>}/>
         </Route>
       </Routes>
       </Router>

@@ -2,6 +2,7 @@ import React,{useState ,useEffect} from 'react'
 import Sidebar from '../component/Sidebar';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function OrderList(){
          const [orders ,setOrders]=useState([]);
@@ -24,7 +25,13 @@ function OrderList(){
              }
              fetchOrderList()
          },[]);
-
+        const navigate = useNavigate();
+        const handleEdit=(orderdata)=>{
+           
+           navigate(`/editorder/${orderdata._id}`,{
+            state:{formData:orderdata}
+           });
+        }
 
     return(
         <>
@@ -88,7 +95,7 @@ function OrderList(){
                                             {orderlistdata.status}
                                             </td>
                                             <td className="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                                            <Link to=""><i className="fa fa-pencil-square-o editicon" aria-hidden="true"></i>Edit</Link>
+                                            <button onClick={()=>handleEdit(orderlistdata)}><Link to=""><i className="fa fa-pencil-square-o editicon" aria-hidden="true"></i>Edit</Link></button>
                                             </td>
                                         </tr>
                                         ))}
