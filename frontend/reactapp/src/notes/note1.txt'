@@ -93,3 +93,17 @@ useEffect: The useEffect hook in React is used to perform side effects,
 
 react routing 
 npm install react-router-dom
+
+
+cookies:
+Cookies in web development are small pieces of data stored on the user's browser by a website.
+Use cases:
+like dark mode for user 
+  multilingual feature 
+
+Type	Description
+Session	Temporary; deleted when the browser closes
+Persistent	Stored until a set expiration date
+Secure	Sent only over HTTPS
+HttpOnly	Not accessible via JavaScript
+SameSite	Controls cross-site access for security

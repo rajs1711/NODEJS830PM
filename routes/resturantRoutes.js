@@ -2,7 +2,7 @@ const express = require("express")
 const router = express.Router();
 const { authenticateJWT } = require('../middleware/authentication');
 const { createResturant, listAllResturants } = require('../controller/ResturantController')
-const { placeorder, getallorders } = require('../controller/placeOrderController');
+const { placeorder, getallorders, updateorder } = require('../controller/placeOrderController');
 
 
 
@@ -40,5 +40,7 @@ router.post("/createfood", createFood);
 // router.get("/listallfoods/:resturantid", listAllFoodsForResturant);
 router.get("/listallfoods", listAllFoodsForResturant);
 router.post("/orderfood", placeorder);
+router.post("/updateorder", authenticateJWT, updateorder);
 router.get("/getallorders", getallorders);
+
 module.exports = router;

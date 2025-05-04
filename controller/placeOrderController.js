@@ -85,7 +85,51 @@ const getallorders = async (req, res) => {
         });
     }
 }
+//update order
+const updateorder = async (req, res) => {
+    try {
+
+        const {
+            _id,
+            email,
+            mobile,
+            customer_name,
+            code,
+            coupancode,
+            delivery_address,
+            status
+        } = req.body;
+
+        console.log(req.body)
+
+        const data = {
+            "email": email,
+            "mobile": mobile,
+            "customer_name": customer_name,
+            "code": code,
+            "coupancode": coupancode,
+            "delivery_address": delivery_address,
+            "status": status
+        }
+
+        const updateOrder = await placeorderModel.findByIdAndUpdate(_id, data, { new: false });
+        res.status(200).send({
+            updateOrder,
+            "success": true,
+            "message": "order detail save successfully"
+
+        });
+    }
+    catch (error) {
+        console.error("error:", error);
+        res.status(500).json({
+            success: false,
+            message: "Internal server Error",
+            error: error.message
+        });
+    }
+}
 
 module.exports = {
-    placeorder, getallorders
+    placeorder, getallorders, updateorder
 }
